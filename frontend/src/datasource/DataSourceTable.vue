@@ -39,7 +39,7 @@
 						onClick: () => dataSourceTable.sync(),
 					},
 					{
-						label: "Додати зв'язок",
+						label: "Додати звʼязок",
 						icon: 'link',
 						onClick: () => (addLinkDialog = true),
 					},
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<Dialog :options="{ title: \"Створити зв'язок\" }" v-model="addLinkDialog">
+	<Dialog :options="{ title: \"Створити звʼязок\" }" v-model="addLinkDialog">
 		<template #body-content>
 			<div class="space-y-4">
 				<div>
@@ -237,7 +237,7 @@ const createLinkResource = createResource({
 		$notify({
 			variant: 'success',
 			title: __('Success'),
-			message: "Зв'язок створено",
+			message: "Звʼязок створено",
 		})
 	},
 })

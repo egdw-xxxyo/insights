@@ -23,7 +23,7 @@
 				<DemoDataBanner v-if="!isSidebarCollapsed" class="m-2 p-2" />
 			<TrialBanner v-if="is_fc_site" :is-sidebar-collapsed="isSidebarCollapsed" />
 			<SidebarLink
-				:label="isSidebarCollapsed ? 'Expand' : 'Collapse'"
+				:label="isSidebarCollapsed ? 'Розгорнути' : 'Згорнути'"
 				:isCollapsed="isSidebarCollapsed"
 				@click="isSidebarCollapsed = !isSidebarCollapsed"
 				class="m-2"
@@ -70,28 +70,28 @@ const is_fc_site = window.is_fc_site
 
 const links = ref([
 	{
-		label: 'Dashboards',
+		label: 'Дашборди',
 		icon: LayoutGrid,
 		to: 'DashboardList',
 	},
 	{
-		label: 'Workbooks',
+		label: 'Робочі зошити',
 		icon: Book,
 		to: 'WorkbookList',
 	},
 	{
-		label: 'Data Sources',
+		label: 'Джерела даних',
 		icon: Database,
 		to: 'DataSourceList',
 	},
 	{
-		label: 'Data Store',
+		label: 'Сховище даних',
 		icon: DatabaseZap,
 		to: 'DataStoreList',
 		hidden: computed(() => !settings.doc.enable_data_store),
 	},
 	{
-		label: 'Settings',
+		label: 'Налаштування',
 		icon: SettingsIcon,
 		to: 'Settings',
 		onClick: () => (showSettingsDialog.value = true),

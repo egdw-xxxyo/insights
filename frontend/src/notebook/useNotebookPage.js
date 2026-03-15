@@ -104,7 +104,7 @@ function getPlaceholderContent() {
 				type: 'paragraph',
 				attrs: { textAlign: 'left' },
 				content: [
-					{ type: 'text', text: '❓Don’t know where to start? Start by defining your..' },
+					{ type: 'text', text: '❓Don't know where to start? Start by defining your..' },
 				],
 			},
 			{

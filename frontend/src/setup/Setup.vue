@@ -49,8 +49,8 @@ const steps = ref([
 		component: markRaw(SourceConnectionStep),
 	},
 	{
-		title: __(‘Help Us Improve’),
-		description: __("Insights is under active development so we’d like to ask you a few questions that will help us improve your experience in the future."),
+		title: __('Help Us Improve'),
+		description: __("Insights is under active development so we'd like to ask you a few questions that will help us improve your experience in the future."),
 		component: markRaw(SetupQuestions),
 	},
 ])

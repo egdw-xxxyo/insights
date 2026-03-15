@@ -1,4 +1,4 @@
-import { createResource } from "frappe-ui";
+import { frappeRequest } from "frappe-ui";
 import type { App } from "vue";
 
 function getTranslatedMessage(message: string): string {
@@ -20,25 +20,24 @@ function translate(message: string, ...args: string[]): string {
 
 export const __ = translate;
 
-function fetchTranslations() {
-    createResource({
-        url: "insights.api.translations.get_translations",
-        method: "GET",
-        cache: "translations",
-        auto: true,
-        transform(data: Record<string, string>) {
+export async function loadTranslations() {
+    try {
+        const data = await frappeRequest({
+            url: "/api/method/insights.api.translations.get_translations",
+            method: "GET",
+        });
+        if (data && typeof data === "object") {
             (window as any).translatedMessages = data;
         }
-    });
+    } catch (e) {
+        console.warn("Failed to load translations", e);
+    }
 }
 
 export function translationPlugin(app: App<Element>) {
     app.config.globalProperties.__ = translate;
     const windowObj = window as any;
     windowObj.__ = translate;
-    if (!windowObj.translatedMessages) {
-        fetchTranslations();
-    }
 }
 
 declare module '@vue/runtime-core' {

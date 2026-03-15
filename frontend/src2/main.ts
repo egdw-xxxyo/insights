@@ -6,7 +6,7 @@ import App from './App.vue'
 import { registerControllers, registerGlobalComponents } from './globals.ts'
 import './index.css'
 import router from './router.ts'
-import { translationPlugin } from './translation.ts'
+import { translationPlugin, loadTranslations } from './translation.ts'
 import { spritePlugin } from 'frappe-ui/icons'
 
 setConfig('resourceFetcher', frappeRequest)
@@ -17,6 +17,7 @@ const pinia = createPinia()
 app.use(pinia)
 app.use(router)
 app.use(spritePlugin)
+app.use(translationPlugin)
 app.component('grid-layout', GridLayout)
 app.component('grid-item', GridItem)
 
@@ -31,5 +32,7 @@ app.config.errorHandler = (err, vm, info) => {
 registerGlobalComponents(app)
 registerControllers(app)
 
-app.mount('#app')
-app.use(translationPlugin);
+// Load translations before mounting so __() has data on first render
+loadTranslations().then(() => {
+	app.mount('#app')
+})

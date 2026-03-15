@@ -93,8 +93,8 @@
 					? __('Switch to Classic Query Builder')
 					: __('Switch to Visual Query Builder'),
 				message: query.doc.is_assisted_query
-					? __("All the changes you have made in the query will be preserved. However, if you make any changes in the Classic Query Builder, they will be lost when you switch back to the Visual Query Builder. Are you sure you want to continue?")
-					: __("All the changes you have made in the Classic Query Builder will be converted to the Visual Query Builder. Are you sure you want to continue?"),
+					? __('All the changes you have made in the query will be preserved. However, if you make any changes in the Classic Query Builder, they will be lost when you switch back to the Visual Query Builder. Are you sure you want to continue?')
+					: __('All the changes you have made in the Classic Query Builder will be converted to the Visual Query Builder. Are you sure you want to continue?'),
 				icon: { name: 'toggle-left', appearance: 'warning' },
 				actions: [
 					{

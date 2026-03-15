@@ -13,7 +13,7 @@ const today = $dayjs().format('dddd, D MMMM')
 	<div class="flex flex-1 flex-col space-y-8 overflow-hidden bg-white p-6">
 		<div class="space-y-2">
 			<div class="text-3xl font-bold text-gray-900">
-				Hello, {{ session.user.first_name }} 👋
+				Привіт, {{ session.user.first_name }} 👋
 			</div>
 			<div class="text-lg text-gray-600">{{ today }}</div>
 		</div>

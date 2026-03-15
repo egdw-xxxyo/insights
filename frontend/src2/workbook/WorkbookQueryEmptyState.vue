@@ -9,7 +9,7 @@ const emit = defineEmits({
 <template>
 	<div class="flex h-full w-full items-center justify-center bg-gray-50">
 		<div class="flex flex-col space-y-4">
-			<div class="text-center text-gray-500">Select an interface to start</div>
+			<div class="text-center text-gray-500">Оберіть інтерфейс для початку</div>
 			<div
 				class="flex w-full cursor-pointer items-center gap-4 rounded border border-transparent bg-white p-2 shadow-sm transition-all hover:border-gray-300"
 				@click="emit('select', 'query-builder')"
@@ -18,8 +18,8 @@ const emit = defineEmits({
 					<SquareMousePointer class="h-5 w-5 text-blue-500/70" stroke-width="1.5" />
 				</div>
 				<div class="flex flex-col gap-1">
-					<p class="font-medium text-gray-700">Query Builder</p>
-					<p class="text-sm text-gray-500">Create queries with a visual interface</p>
+					<p class="font-medium text-gray-700">Конструктор запитів</p>
+					<p class="text-sm text-gray-500">Створюйте запити за допомогою візуального інтерфейсу</p>
 				</div>
 			</div>
 			<div
@@ -30,8 +30,8 @@ const emit = defineEmits({
 					<ScrollText class="h-5 w-5 text-orange-500/70" stroke-width="1.5" />
 				</div>
 				<div class="flex flex-col gap-1">
-					<p class="font-medium text-gray-700">SQL Editor</p>
-					<p class="text-sm text-gray-500">Create queries with raw SQL</p>
+					<p class="font-medium text-gray-700">SQL редактор</p>
+					<p class="text-sm text-gray-500">Створюйте запити за допомогою SQL</p>
 				</div>
 			</div>
 			<div
@@ -42,8 +42,8 @@ const emit = defineEmits({
 					<Braces class="h-5 w-5 text-green-500/70" stroke-width="1.5" />
 				</div>
 				<div class="flex flex-col gap-1">
-					<p class="font-medium text-gray-700">Script Editor</p>
-					<p class="text-sm text-gray-500">Create queries with a python script</p>
+					<p class="font-medium text-gray-700">Скрипт редактор</p>
+					<p class="text-sm text-gray-500">Створюйте запити за допомогою Python скрипта</p>
 				</div>
 			</div>
 		</div>

@@ -31,7 +31,7 @@ function update() {
 
 <template>
 	<div class="flex w-full flex-col gap-6 p-8 px-10">
-		<h1 class="text-xl font-semibold">Profile</h1>
+		<h1 class="text-xl font-semibold">Профіль</h1>
 		<div class="flex items-start gap-4">
 			<div class="relative flex flex-col items-center justify-between gap-2">
 				<Avatar class="!h-15 !w-15" :image="user.user_image" :label="user.full_name" />
@@ -45,14 +45,14 @@ function update() {
 			<div class="flex gap-6">
 				<FormControl
 					v-model="user.first_name"
-					label="First Name"
+					label="Ім'я"
 					autocomplete="off"
 					class="flex-1"
 				/>
 				<FormControl
 					autocomplete="off"
 					class="flex-1"
-					label="Last Name"
+					label="Прізвище"
 					v-model="user.last_name"
 				/>
 			</div>
@@ -60,21 +60,21 @@ function update() {
 				<FormControl
 					autocomplete="off"
 					class="flex-1"
-					label="Email"
+					label="Електронна пошта"
 					:modelValue="user.email"
 					:disabled="true"
 				/>
 				<FormControl
 					autocomplete="off"
 					class="flex-1"
-					label="New Password"
+					label="Новий пароль"
 					type="password"
 					disabled
 				/>
 			</div>
 			<div class="flex justify-end">
 				<Button
-					label="Update"
+					label="Оновити"
 					variant="solid"
 					:loading="userStore.updatingUser"
 					:disabled="updateDisabled"

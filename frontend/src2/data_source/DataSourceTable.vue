@@ -21,7 +21,7 @@ watchEffect(() => {
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
 		<Breadcrumbs
 			:items="[
-				{ label: 'Data Sources', route: '/data-source' },
+				{ label: 'Джерела даних', route: '/data-source' },
 				{ label: props.data_source, route: `/data-source/${props.data_source}` },
 				{
 					label: props.table_name,
@@ -42,7 +42,7 @@ watchEffect(() => {
 				>
 					<template #footer-left>
 						<p class="tnum p-1 text-sm text-gray-600">
-							Showing only the first 100 rows
+							Показано лише перші 100 рядків
 						</p>
 					</template>
 				</DataTable>
@@ -53,7 +53,7 @@ watchEffect(() => {
 			class="flex h-full w-full flex-col items-center justify-center rounded bg-gray-50"
 		>
 			<LoadingIndicator class="mb-2 w-8 text-gray-500" />
-			<div class="text-lg text-gray-600">Loading table data...</div>
+			<div class="text-lg text-gray-600">Завантаження даних таблиці...</div>
 		</div>
 	</div>
 </template>

@@ -9,7 +9,7 @@ settings.load()
 
 <template>
 	<div class="flex w-full flex-col gap-6 overflow-y-scroll p-8 px-10">
-		<h1 class="text-xl font-semibold">Data Store</h1>
+		<h1 class="text-xl font-semibold">Сховище даних</h1>
 
 		<SettingItem
 			label="Enable"
@@ -34,7 +34,7 @@ settings.load()
 
 		<div class="flex justify-end">
 			<Button
-				label="Update"
+				label="Оновити"
 				variant="solid"
 				:disabled="!settings.isdirty"
 				:loading="settings.saving"

@@ -96,16 +96,16 @@ function saveEdit() {
 		:modelValue="dashboard.isEditingItem(props.item)"
 		@update:modelValue="!$event ? (dashboard.editingItemIndex = undefined) : true"
 		:options="{
-			title: 'Edit Filter',
+			title: 'Редагувати фільтр',
 			actions: [
 				{
-					label: 'Save',
+					label: 'Зберегти',
 					variant: 'solid',
 					disabled: editDisabled,
 					onClick: saveEdit,
 				},
 				{
-					label: 'Cancel',
+					label: 'Скасувати',
 					onClick: () => (dashboard.editingItemIndex = undefined),
 				},
 			],
@@ -116,7 +116,7 @@ function saveEdit() {
 				<div class="flex gap-4">
 					<div class="flex flex-col gap-4 flex-1">
 						<FormControl
-							label="Label"
+							label="Мітка"
 							v-model="filter.filter_name"
 							placeholder="Enter filter label..."
 							autocomplete="off"
@@ -129,7 +129,7 @@ function saveEdit() {
 					<FormControl
 						class="flex-1 flex-shrink-0"
 						v-model="filter.filter_type"
-						label="Type"
+						label="Тип"
 						type="select"
 						:options="Object.keys(FILTER_TYPES)"
 						@update:modelValue="onFilterTypeChange"

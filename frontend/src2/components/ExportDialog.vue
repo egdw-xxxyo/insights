@@ -31,7 +31,7 @@ function submit() {
 </script>
 
 <template>
-  <Dialog v-model="show" :options="{ title: 'Export Data', size: 'sm' }">
+  <Dialog v-model="show" :options="{ title: 'Експорт даних', size: 'sm' }">
     <template #body-content>
       <div class="space-y-4">
         <div>
@@ -40,7 +40,7 @@ function submit() {
               <FormControl
                 class="w-32"
                 type="select"
-                label="Export Format"
+                label="Формат експорту"
                 :options="[
                   { label: 'CSV', value: 'csv' },
                   { label: 'Excel', value: 'excel' },
@@ -54,9 +54,9 @@ function submit() {
         <div class="flex items-center gap-2">
           <FormControl
             type="text"
-            label="Filename"
+            label="Назва файлу"
             v-model="filename"
-            placeholder="Enter filename"
+            placeholder="Введіть назву файлу"
             class="w-44"
           />
         </div>
@@ -65,8 +65,8 @@ function submit() {
 
     <template #actions>
       <div class="flex justify-end gap-2">
-        <Button variant="ghost" @click="() => { emit('cancel'); show = false }">Cancel</Button>
-        <Button variant="solid" @click="submit" :loading="props.downloading">Export</Button>
+        <Button variant="ghost" @click="() => { emit('cancel'); show = false }">Скасувати</Button>
+        <Button variant="solid" @click="submit" :loading="props.downloading">Експортувати</Button>
       </div>
     </template>
   </Dialog>

@@ -23,24 +23,24 @@ const props = defineProps<{
 
 const moreActions = [
 	{
-		label: 'Export as PNG',
+		label: 'Експортувати як PNG',
 		icon: h(ImageDown, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 		onClick: () => props.onDownload(),
 		condition: () => !!props.chartEl,
 	},
 	{
-		label: 'Share Chart',
+		label: 'Поділитися діаграмою',
 		icon: h(Share2, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 		onClick: () => props.onShare(),
 		condition: () => !props.chart.doc.read_only,
 	},
 	{
-		label: 'Duplicate Chart',
+		label: 'Дублювати діаграму',
 		icon: h(CopyPlus, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 		onClick: () => props.chart.duplicate(),
 	},
 	{
-		label: 'Reset Options',
+		label: 'Скинути налаштування',
 		icon: h(XIcon, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 		onClick: () => props.chart.resetConfig(),
 		condition: () => !props.chart.doc.read_only,
@@ -68,8 +68,8 @@ const moreActions = [
 			>
 				<div class="h-2 w-2 rounded-full bg-green-500"></div>
 				<div>
-					<span v-if="chart.dataQuery.result.timeTaken == -1"> Fetched from cache </span>
-					<span v-else> Fetched in {{ chart.dataQuery.result.timeTaken }}s </span>
+					<span v-if="chart.dataQuery.result.timeTaken == -1"> Отримано з кешу</span>
+					<span v-else> Отримано за {{ chart.dataQuery.result.timeTaken }}с</span>
 					<span> {{ useTimeAgo(chart.dataQuery.result.lastExecutedAt).value }} </span>
 				</div>
 			</div>
@@ -77,7 +77,7 @@ const moreActions = [
 		<div class="flex items-center gap-2">
 			<Button
 				variant="ghost"
-				label="Refresh"
+				label="Оновити"
 				@click="() => chart.refresh(true)"
 				class="!h-6 !gap-1.5 bg-white !px-2 text-xs shadow"
 			>

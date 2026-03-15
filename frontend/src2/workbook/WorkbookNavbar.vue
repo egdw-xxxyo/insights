@@ -33,7 +33,7 @@ const workbook = inject(workbookKey)!
 					<ContentEditable
 						class="rounded-sm font-medium !text-gray-800 focus:ring-2 focus:ring-gray-700 focus:ring-offset-4"
 						:modelValue="workbook.doc.title"
-						placeholder="Untitled Workbook"
+						placeholder="Без назви"
 						@returned="workbook.doc.title = $event"
 						@blur="workbook.doc.title = $event"
 					></ContentEditable>

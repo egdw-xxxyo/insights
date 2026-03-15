@@ -91,12 +91,12 @@ const filteredSchema = computed(() => {
 <template>
 	<div class="flex h-full flex-col overflow-hidden rounded border">
 		<div class="flex-shrink-0 border-b px-3 py-2.5 text-sm font-medium text-gray-700">
-			Tables
+			Таблиці
 		</div>
 		<div class="flex-shrink-0 border-b p-2">
 			<div class="relative">
 				<FormControl
-				placeholder="Search Tables and Columns..."
+				placeholder="Пошук таблиць і стовпців..."
 				v-model="searchQuery"
 				:debounce="300">
 				<template #prefix>
@@ -107,10 +107,10 @@ const filteredSchema = computed(() => {
 		</div>
 		<div class="flex-1 overflow-y-auto">
 			<div v-if="!Object.keys(schema).length" class="p-4 text-center text-sm text-gray-500">
-				No Tables available. Select a data source first
+				Немає доступних таблиць. Спочатку оберіть джерело даних
 			</div>
 			<div v-else-if="!Object.keys(filteredSchema).length" class="p-4 text-center text-sm text-gray-500">
-				No tables or columns match your search
+				Жодна таблиця чи стовпець не відповідає вашому пошуку
 			</div>
 			<div v-else class="divide-y">
 				<div v-for="[tableName, tableData] in Object.entries(filteredSchema)" :key="tableName">

@@ -41,7 +41,7 @@ const filteredTeams = computed(() => {
 const listOptions = ref({
 	columns: [
 		{
-			label: 'Team Name',
+			label: 'Назва команди',
 			key: 'team_name',
 			prefix(props: any) {
 				const team = props.row as Team
@@ -59,11 +59,11 @@ const listOptions = ref({
 			showEditTeamDialog.value = true
 		},
 		emptyState: {
-			title: 'No teams.',
-			description: 'No teams to display.',
+			title: 'Немає команд.',
+			description: 'Немає команд для відображення.',
 			button: session.user.is_admin
 				? {
-						label: 'Create Team',
+						label: 'Створити команду',
 						variant: 'solid',
 						onClick: () => (showCreateTeamDialog.value = true),
 				  }
@@ -79,7 +79,7 @@ const editTeam = ref<Team | null>(null)
 
 <template>
 	<div class="flex w-full flex-col gap-6 overflow-y-scroll p-8 px-10">
-		<h1 class="text-xl font-semibold">Permissions</h1>
+		<h1 class="text-xl font-semibold">Дозволи</h1>
 
 		<SettingItem
 			label="Enable"
@@ -103,7 +103,7 @@ const editTeam = ref<Team | null>(null)
 				<Button
 					v-if="session.user.is_admin"
 					class="self-end"
-					label="New Team"
+					label="Нова команда"
 					variant="outline"
 					@click="showCreateTeamDialog = true"
 				>

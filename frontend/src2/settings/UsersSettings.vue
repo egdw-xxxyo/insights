@@ -25,7 +25,7 @@ const filteredUsers = computed(() => {
 const listOptions = ref({
 	columns: [
 		{
-			label: 'User',
+			label: 'Користувач',
 			key: 'full_name',
 			prefix: (props: any) => {
 				const user = props.row as User
@@ -33,7 +33,7 @@ const listOptions = ref({
 			},
 		},
 		{
-			label: 'Status',
+			label: 'Статус',
 			key: 'enabled',
 			getLabel: (props: any) => {
 				const user = props.row as User
@@ -42,7 +42,7 @@ const listOptions = ref({
 						? 'Invitation Sent'
 						: 'Invitation Expired'
 				}
-				return props.row.enabled ? 'Enabled' : 'Disabled'
+				return props.row.enabled ? 'Увімкнено' : 'Вимкнено'
 			},
 			prefix: (props: any) => {
 				let color
@@ -77,11 +77,11 @@ const listOptions = ref({
 		selectable: false,
 		showTooltip: false,
 		emptyState: {
-			title: 'No users.',
-			description: 'No users to display.',
+			title: 'Немає користувачів.',
+			description: 'Немає користувачів для відображення.',
 			button: session.user.is_admin
 				? {
-						label: 'Invite User',
+						label: 'Запросити користувача',
 						variant: 'solid',
 						onClick: () => (showInviteUserDialog.value = true),
 				  }
@@ -141,11 +141,11 @@ function sendInvitation() {
 
 <template>
 	<div class="flex h-full w-full flex-col gap-3 overflow-x-hidden overflow-y-scroll p-8 px-10">
-		<h1 class="flex-shrink-0 text-xl font-semibold">Users</h1>
+		<h1 class="flex-shrink-0 text-xl font-semibold">Користувачі</h1>
 
 		<div class="flex w-full flex-1 flex-col gap-3 overflow-auto">
 			<div class="flex justify-between gap-2 overflow-visible py-1">
-				<FormControl placeholder="Search" :debounce="300">
+				<FormControl placeholder="Пошук" :debounce="300">
 					<template #prefix>
 						<SearchIcon class="h-4 w-4 text-gray-500" />
 					</template>
@@ -153,7 +153,7 @@ function sendInvitation() {
 
 				<Button
 					v-if="session.user.is_admin"
-					label="Invite User"
+					label="Запросити користувача"
 					variant="outline"
 					@click="showInviteUserDialog = true"
 				>
@@ -169,11 +169,11 @@ function sendInvitation() {
 	<Dialog
 		v-model="showInviteUserDialog"
 		:options="{
-			title: 'Invite User',
+			title: 'Запросити користувача',
 			size: 'sm',
 			actions: [
 				{
-					label: 'Send Invitation',
+					label: 'Надіслати запрошення',
 					variant: 'solid',
 					disabled: !areAllEmailsValid,
 					loading: userStore.sendingInvitation,

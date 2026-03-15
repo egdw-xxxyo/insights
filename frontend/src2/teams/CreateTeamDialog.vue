@@ -11,10 +11,10 @@ const newTeamName = ref('')
 	<Dialog
 		v-model="show"
 		:options="{
-			title: 'Create Team',
+			title: 'Створити команду',
 			actions: [
 				{
-					label: 'Create',
+					label: 'Створити',
 					variant: 'solid',
 					disabled: !newTeamName || teamStore.creatingTeam,
 					loading: teamStore.creatingTeam,
@@ -30,7 +30,7 @@ const newTeamName = ref('')
 	>
 		<template #body-content>
 			<div class="flex flex-col gap-4">
-				<FormControl label="Team Name" v-model="newTeamName" autocomplete="off" />
+				<FormControl label="Назва команди" v-model="newTeamName" autocomplete="off" />
 			</div>
 		</template>
 	</Dialog>

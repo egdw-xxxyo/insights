@@ -58,9 +58,9 @@ const workbook = inject(workbookKey)
 		<Dropdown
 			class="ml-1.5"
 			:options="[
-				{ label: 'New Query', onClick: workbook.addQuery },
-				{ label: 'New Chart', onClick: workbook.addChart },
-				{ label: 'New Dashboard', onClick: workbook.addDashboard },
+				{ label: 'Новий запит', onClick: workbook.addQuery },
+				{ label: 'Нова діаграма', onClick: workbook.addChart },
+				{ label: 'Новий дашборд', onClick: workbook.addDashboard },
 			]"
 		>
 			<Button variant="ghost" icon="plus"> </Button>

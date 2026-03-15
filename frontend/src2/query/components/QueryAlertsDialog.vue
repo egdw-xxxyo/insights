@@ -98,7 +98,7 @@ const listOptions = ref({
 		<template #body-content>
 			<div class="flex h-[30rem] w-full flex-1 flex-col gap-3 overflow-auto text-base">
 				<div class="flex justify-between gap-2 overflow-visible py-1">
-					<FormControl placeholder="Search" v-model="searchQuery" :debounce="300">
+					<FormControl placeholder="Пошук" v-model="searchQuery" :debounce="300">
 						<template #prefix>
 							<SearchIcon class="h-4 w-4 text-gray-500" />
 						</template>

@@ -32,7 +32,7 @@ watch(searchQuery, (query) => {
 			<div class="rounded bg-gray-100 p-1">
 				<Book class="h-4 w-4 text-gray-700" stroke-width="1.5" />
 			</div>
-			<div class="text-lg">Workbooks</div>
+			<div class="text-lg">Робочі зошити</div>
 		</div>
 		<div class="mt-3 flex-1 overflow-hidden p-1">
 			<!-- list of recent records -->
@@ -62,9 +62,9 @@ watch(searchQuery, (query) => {
 			<!-- empty state -->
 			<div v-else class="flex h-full w-full items-center justify-center">
 				<div class="flex flex-col items-center space-y-2">
-					<div class="text-lg text-gray-600">No workbooks created</div>
+					<div class="text-lg text-gray-600">Робочих зошитів не створено</div>
 					<div class="text-sm text-gray-600">
-						Your workbooks will appear here. Create a new workbook to get started.
+						Ваші робочі зошити з'являться тут. Створіть новий робочий зошит, щоб почати.
 					</div>
 				</div>
 			</div>

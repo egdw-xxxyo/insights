@@ -30,7 +30,7 @@ const listOptions = ref({
 			key: 'team_name',
 		},
 		{
-			label: 'Owner',
+			label: 'Власник',
 			key: 'owner',
 			getLabel(props: any) {
 				const team = props.row as Team
@@ -57,11 +57,11 @@ const listOptions = ref({
 			showEditTeamDialog.value = true
 		},
 		emptyState: {
-			title: 'No teams.',
-			description: 'No teams to display.',
+			title: 'Немає команд.',
+			description: 'Немає команд для відображення.',
 			button: session.user.is_admin
 				? {
-						label: 'Create Team',
+						label: 'Створити команду',
 						variant: 'solid',
 						onClick: () => (showCreateTeamDialog.value = true),
 				  }
@@ -74,16 +74,16 @@ const showCreateTeamDialog = ref(false)
 const showEditTeamDialog = ref(false)
 const editTeam = ref<Team | null>(null)
 
-document.title = 'Teams | Insights'
+document.title = 'Команди | Insights'
 </script>
 
 <template>
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
-		<Breadcrumbs :items="[{ label: 'Teams', route: '/teams' }]" />
+		<Breadcrumbs :items="[{ label: 'Команди', route: '/teams' }]" />
 		<div class="flex items-center gap-2">
 			<Button
 				v-if="session.user.is_admin"
-				label="Create Team"
+				label="Створити команду"
 				variant="solid"
 				@click="showCreateTeamDialog = true"
 			>
@@ -96,7 +96,7 @@ document.title = 'Teams | Insights'
 
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl placeholder="Search" v-model="searchQuery" :debounce="300">
+			<FormControl placeholder="Пошук" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>

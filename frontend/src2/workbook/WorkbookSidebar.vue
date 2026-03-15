@@ -25,8 +25,8 @@ const activeQueryName = computed(() => {
 	>
 		<WorkbookSidebarFolders
 			v-bind="{
-				title: 'Queries',
-				emptyMessage: 'No queries',
+				title: 'Запити',
+				emptyMessage: 'Немає запитів',
 				items: workbook.doc.queries,
 				itemKey: 'name',
 				type: 'query',
@@ -53,8 +53,8 @@ const activeQueryName = computed(() => {
 
 		<WorkbookSidebarFolders
 			v-bind="{
-				title: 'Charts',
-				emptyMessage: 'No charts',
+				title: 'Діаграми',
+				emptyMessage: 'Немає діаграм',
 				items: workbook.doc.charts,
 				itemKey: 'name',
 				type: 'chart',
@@ -71,8 +71,8 @@ const activeQueryName = computed(() => {
 
 		<WorkbookSidebarListSection
 			v-bind="{
-				title: 'Dashboards',
-				emptyMessage: 'No dashboards',
+				title: 'Дашборди',
+				emptyMessage: 'Немає дашбордів',
 				items: workbook.doc.dashboards,
 				itemKey: 'name',
 				add: workbook.addDashboard,

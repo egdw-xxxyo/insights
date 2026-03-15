@@ -33,8 +33,8 @@ function uploadFile(file: File) {
 		})
 		.catch((error: any) => {
 			createToast({
-				title: 'Upload Failed',
-				message: error?.message || 'Failed to process uploaded file',
+				title: 'Помилка завантаження',
+				message: error?.message || 'Не вдалося обробити завантажений файл',
 				variant: 'error',
 			})
 			fileUploaded.value = false
@@ -60,15 +60,15 @@ function importCSVData() {
 		.then(() => {
 			
 				createToast({
-					title: 'Table Imported',
-					message: `Table '${csvData.tablename}' imported successfully`,
+					title: 'Таблицю імпортовано',
+					message: `Таблицю '${csvData.tablename}' успішно імпортовано`,
 					variant: 'success',
 				})
 		})
 		.catch((error: any) => {
 			createToast({
-				title: 'Import Failed',
-				message: error?.message || 'Failed to import table',
+				title: 'Помилка імпорту',
+				message: error?.message || 'Не вдалося імпортувати таблицю',
 				variant: 'error',
 			})
 		})
@@ -92,7 +92,7 @@ function resetFile() {
 	<Dialog
 		v-model="show"
 		:options="{
-			title: csvData.tablename ? 'Import Table' : 'Upload CSV/Excel File',
+			title: csvData.tablename ? 'Імпортувати таблицю' : 'Завантажити CSV/Excel файл',
 			size: fileUploaded ? '4xl' : '',
 		}"
 	>
@@ -115,10 +115,10 @@ function resetFile() {
 						/>
 						<div class="text-center">
 							<p v-if="!uploading" class="text-sm font-medium text-gray-800">
-								Select a CSV or Excel file to upload
+								Оберіть CSV або Excel файл для завантаження
 							</p>
 							<p v-if="!uploading" class="mt-1 text-xs text-gray-600">
-								or drag and drop it here
+								або перетягніть його сюди
 							</p>
 							<div v-else class="flex w-[15rem] flex-col gap-2">
 								<div class="h-2 w-full rounded-full bg-gray-200">
@@ -127,7 +127,7 @@ function resetFile() {
 										:style="{ width: `${progress}%` }"
 									></div>
 								</div>
-								<p class="text-xs">Uploading...</p>
+								<p class="text-xs">Завантаження...</p>
 							</div>
 						</div>
 					</div>
@@ -136,7 +136,7 @@ function resetFile() {
 
 			<div v-else class="flex flex-col gap-4">
 				<div>
-					<FormControl class="w-fit" label="Table Name" v-model="csvData.tablename" />
+					<FormControl class="w-fit" label="Назва таблиці" v-model="csvData.tablename" />
 				</div>
 				<div
 					class="relative flex h-[30rem] w-full flex-col overflow-hidden rounded border bg-white"
@@ -148,8 +148,8 @@ function resetFile() {
 					>
 						<template #footer-left>
 							<p class="tnum p-1 text-sm text-gray-600">
-								Showing {{ csvData.rows.length }} of
-								{{ csvData.totalRowCount }} rows
+								Показано {{ csvData.rows.length }} з
+								{{ csvData.totalRowCount }} рядків
 							</p>
 						</template>
 					</DataTable>
@@ -157,14 +157,14 @@ function resetFile() {
 			</div>
 			<div class="mt-4 flex justify-between pt-2">
 				<div class="ml-auto flex items-center space-x-2">
-					<Button :disabled="!fileUploaded" @click="resetFile"> Reset File </Button>
+					<Button :disabled="!fileUploaded" @click="resetFile"> Скинути файл </Button>
 					<Button
 						variant="solid"
 						:disabled="importDisabled"
 						:loading="importing"
 						@click="importCSVData"
 					>
-						Import
+						Імпортувати
 					</Button>
 				</div>
 			</div>

@@ -12,7 +12,7 @@ const query = inject('query') as Query
 <template>
 	<Dialog
 		v-model="showDialog"
-		:options="{ title: 'Generated SQL', size: '3xl' }"
+		:options="{ title: 'Згенерований SQL', size: '3xl' }"
 		:dismissable="true"
 	>
 		<template #body-content>

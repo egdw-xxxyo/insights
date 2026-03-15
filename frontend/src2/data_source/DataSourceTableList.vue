@@ -24,7 +24,7 @@ function updateTablesList() {
 const listOptions = ref({
 	columns: [
 		{
-			label: 'Table Name',
+			label: 'Назва таблиці',
 			key: 'table_name',
 		},
 	],
@@ -36,10 +36,10 @@ const listOptions = ref({
 			path: `/data-source/${props.name}/${table.table_name}`,
 		}),
 		emptyState: {
-			title: 'No Tables Found',
-			description: 'No tables found for the selected data source.',
+			title: 'Таблиці не знайдено',
+			description: 'Не знайдено таблиць для обраного джерела даних.',
 			button: {
-				label: 'Refresh',
+				label: 'Оновити',
 				iconLeft: 'refresh-ccw',
 				variant: 'outline',
 				loading: tableStore.updatingDataSourceTables,
@@ -61,7 +61,7 @@ watchEffect(() => {
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
 		<Breadcrumbs
 			:items="[
-				{ label: 'Data Sources', route: '/data-source' },
+				{ label: 'Джерела даних', route: '/data-source' },
 				{ label: dataSource?.title || props.name, route: `/data-source/${props.name}` },
 			]"
 		/>
@@ -70,7 +70,7 @@ watchEffect(() => {
 
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl placeholder="Search by Title" v-model="searchQuery" :debounce="300">
+			<FormControl placeholder="Пошук за назвою" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -78,7 +78,7 @@ watchEffect(() => {
 			<Dropdown
 				:options="[
 					{
-						label: 'Update Tables',
+						label: 'Оновити таблиці',
 						onClick: () =>
 							tableStore
 								.updateDataSourceTables(props.name)
@@ -91,7 +91,7 @@ watchEffect(() => {
 					},
 					dataSource?.is_frappe_db
 						? {
-								label: 'Update Table Links',
+								label: 'Оновити зв\'язки таблиць',
 								onClick: () => tableStore.updateTableLinks(props.name),
 								icon: () =>
 									h(RefreshCcw, {

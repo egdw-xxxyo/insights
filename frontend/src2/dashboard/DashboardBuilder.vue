@@ -65,14 +65,14 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 				<ContentEditable
 					class="cursor-text rounded-sm text-lg font-semibold !text-gray-800 focus:ring-2 focus:ring-gray-700 focus:ring-offset-4"
 					v-model="dashboard.doc.title"
-					placeholder="Untitled Dashboard"
+					placeholder="Без назви"
 				></ContentEditable>
 				<div class="flex gap-2">
 					<Button
 						v-if="!dashboard.editing"
 						variant="outline"
 						@click="() => dashboard.refresh(true)"
-						label="Refresh"
+						label="Оновити"
 					>
 						<template #prefix>
 							<RefreshCcw class="h-4 w-4 text-gray-700" stroke-width="1.5" />
@@ -82,7 +82,7 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 						v-if="!dashboard.editing && !dashboard.doc.read_only"
 						variant="outline"
 						@click="showShareDialog = true"
-						label="Share"
+						label="Поділитися"
 					>
 						<template #prefix>
 							<Share2 class="h-4 text-gray-700" stroke-width="1.5" />
@@ -92,7 +92,7 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 						v-if="!dashboard.editing"
 						variant="outline"
 						@click="dashboard.editing = true"
-						label="Edit"
+						label="Редагувати"
 					>
 						<template #prefix>
 							<Edit3 class="h-4 w-4 text-gray-700" stroke-width="1.5" />
@@ -104,7 +104,7 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 						icon-left="plus"
 						@click="showChartSelectorDialog = true"
 					>
-						Chart
+						Діаграма
 					</Button>
 					<Button
 						v-if="dashboard.editing"
@@ -112,7 +112,7 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 						icon-left="plus"
 						@click="() => dashboard.addFilter()"
 					>
-						Filter
+						Фільтр
 					</Button>
 					<Button
 						v-if="dashboard.editing"
@@ -120,7 +120,7 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 						icon-left="plus"
 						@click="() => dashboard.addText()"
 					>
-						Text
+						Текст
 					</Button>
 					<Button
 						v-if="dashboard.editing"
@@ -133,26 +133,26 @@ const verticalCompact = useStorage('dashboard_vertical_compact', true)
 							}
 						"
 					>
-						Done
+						Готово
 					</Button>
 					<Dropdown
 						:button="{ icon: 'more-horizontal', variant: 'outline' }"
 						:options="[
 							{
-								label: 'Force Refresh',
+								label: 'Примусове оновлення',
 								icon: RefreshCcw,
 								onClick: () => dashboard.refresh(true),
 							},
 							dashboard.editing
 								? {
-										label: 'Compact Layout',
+										label: 'Компактний макет',
 										icon: verticalCompact ? 'check-square' : 'square',
 										onClick: () => (verticalCompact = !verticalCompact),
 								  }
 								: null,
 							dashboard.editing
 								? {
-										label: 'Reset Layout',
+										label: 'Скинути макет',
 										icon: 'refresh-ccw',
 										onClick: () => (
 											dashboard.discard(), (dashboard.editing = false)

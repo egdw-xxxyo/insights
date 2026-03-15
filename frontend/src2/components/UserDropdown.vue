@@ -50,7 +50,7 @@
 				title: 'Switch to Insights v2',
 				actions: [
 					{
-						label: 'Continue',
+						label: 'Продовжити',
 						variant: 'solid',
 						onClick: openInsightsV2,
 					},
@@ -77,7 +77,7 @@
 				message: 'Are you sure you want to login to your Frappe Cloud dashboard?',
 				actions: [
 					{
-						label: 'Confirm',
+						label: 'Підтвердити',
 						variant: 'solid',
 						loading: loggingInToFC,
 						onClick() {
@@ -107,22 +107,22 @@ const showLoginToFCDialog = ref(false)
 
 const userDropdownOptions = ref([
 	{
-		label: 'Documentation',
+		label: 'Документація',
 		icon: h(HelpCircle),
 		onClick: () => window.open('https://docs.frappe.io/insights', '_blank'),
 	},
 	{
-		label: 'Join Telegram Group',
+		label: 'Telegram група',
 		icon: h(MessageCircle),
 		onClick: () => window.open('https://t.me/frappeinsights', '_blank'),
 	},
 	{
-		label: 'Log out',
+		label: 'Вийти',
 		icon: h(LogOut),
 		onClick: () =>
 			confirmDialog({
-				title: 'Log out',
-				message: 'Are you sure you want to log out?',
+				title: 'Вийти',
+				message: 'Ви впевнені, що хочете вийти?',
 				onSuccess: session.logout,
 			}),
 	},

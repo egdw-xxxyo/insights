@@ -59,10 +59,10 @@ const activeTab = ref('Members')
 		v-if="currentTeam"
 		v-model="show"
 		:options="{
-			title: 'Manage Team',
+			title: 'Керування командою',
 			actions: [
 				{
-					label: 'Done',
+					label: 'Готово',
 					variant: 'solid',
 					disabled: !teamModified || teamStore.updatingTeam,
 					loading: teamStore.updatingTeam,
@@ -79,7 +79,7 @@ const activeTab = ref('Members')
 		<template #body-content>
 			<div class="-mb-5 flex h-[25rem] flex-col gap-4 text-base">
 				<FormControl
-					label="Team Name"
+					label="Назва команди"
 					v-model="currentTeam.team_name"
 					:disabled="currentTeam.name === 'Admin'"
 					autocomplete="off"
@@ -108,7 +108,7 @@ const activeTab = ref('Members')
 						<Button
 							class="flex-shrink-0"
 							variant="solid"
-							label="Add"
+							label="Додати"
 							:disabled="!newMemberEmail"
 							@click="addMember"
 						></Button>
@@ -151,7 +151,7 @@ const activeTab = ref('Members')
 							v-else
 							class="rounded border border-dashed border-gray-300 px-32 py-6 text-center text-sm text-gray-500"
 						>
-							This team does not have any members
+							Ця команда не має учасників
 						</div>
 					</div>
 				</div>

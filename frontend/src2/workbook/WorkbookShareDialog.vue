@@ -24,10 +24,10 @@ function shareWorkbook() {
 type PermissionMap = Record<string, ShareAccess>
 const permissionMap = ref<PermissionMap>({})
 const accessOptions = (user_email: string) => [
-	{ label: 'Can Edit', value: 'edit', onClick: () => (permissionMap.value[user_email] = 'edit') },
-	{ label: 'Can View', value: 'view', onClick: () => (permissionMap.value[user_email] = 'view') },
+	{ label: 'Може редагувати', value: 'edit', onClick: () => (permissionMap.value[user_email] = 'edit') },
+	{ label: 'Може переглядати', value: 'view', onClick: () => (permissionMap.value[user_email] = 'view') },
 	{
-		label: 'Remove',
+		label: 'Видалити',
 		value: 'remove',
 		onClick: () => (permissionMap.value[user_email] = undefined),
 	},
@@ -70,7 +70,7 @@ function updatePermissions() {
 	})
 	show.value = false
 	createToast({
-		title: 'Permissions updated',
+		title: 'Дозволи оновлено',
 		variant: 'success',
 	})
 }
@@ -80,10 +80,10 @@ function updatePermissions() {
 	<Dialog
 		v-model="show"
 		:options="{
-			title: 'Manage Workbook Access',
+			title: 'Керування доступом до робочого зошиту',
 			actions: [
 				{
-					label: 'Save',
+					label: 'Зберегти',
 					variant: 'solid',
 					disabled: saveDisabled,
 					onClick: updatePermissions,
@@ -96,33 +96,33 @@ function updatePermissions() {
 				<div class="flex items-center gap-3 rounded border px-3 py-2">
 					<Building2 class="h-6 w-6 text-blue-500" stroke-width="1.5" />
 					<div class="flex flex-1 flex-col">
-						<div class="font-medium leading-5 text-gray-800">Organization Access</div>
+						<div class="font-medium leading-5 text-gray-800">Доступ організації</div>
 						<div class="text-sm text-gray-700">
 							{{
 								organizationAccess
-									? `All users in your organization can ${organizationAccess}`
-									: 'Only you have access to this workbook'
+									? `Усі користувачі вашої організації можуть ${organizationAccess === 'edit' ? 'редагувати' : 'переглядати'}`
+									: 'Тільки ви маєте доступ до цього робочого зошиту'
 							}}
 						</div>
 					</div>
 					<Dropdown
 						:options="[
 							{
-								label: 'Disabled',
+								label: 'Вимкнено',
 								onClick: () => (organizationAccess = undefined),
 							},
 							{
-								label: 'Can View',
+								label: 'Може переглядати',
 								onClick: () => (organizationAccess = 'view'),
 							},
 							{
-								label: 'Can Edit',
+								label: 'Може редагувати',
 								onClick: () => (organizationAccess = 'edit'),
 							},
 						]"
 						:button="{
 							iconRight: 'chevron-down',
-							label: organizationAccess ? `Can ${organizationAccess}` : 'Disabled',
+							label: organizationAccess ? (organizationAccess === 'edit' ? 'Може редагувати' : 'Може переглядати') : 'Вимкнено',
 						}"
 					/>
 				</div>
@@ -140,7 +140,7 @@ function updatePermissions() {
 					<Button
 						class="flex-shrink-0"
 						variant="solid"
-						label="Share"
+						label="Поділитися"
 						:disabled="!selectedUserEmail"
 						@click="shareWorkbook"
 					></Button>
@@ -169,13 +169,13 @@ function updatePermissions() {
 							:button="{
 								iconRight: 'chevron-down',
 								variant: 'ghost',
-								label: user.access === 'edit' ? 'Can Edit' : 'Can View',
+								label: user.access === 'edit' ? 'Може редагувати' : 'Може переглядати',
 							}"
 						/>
 						<Button
 							v-else
 							variant="ghost"
-							label="Owner"
+							label="Власник"
 							disabled
 							class="flex-shrink-0"
 						/>
@@ -187,8 +187,8 @@ function updatePermissions() {
 					>
 						{{
 							organizationAccess
-								? `All users in your organization can ${organizationAccess} this workbook`
-								: 'Only you have access to this workbook'
+								? `Усі користувачі вашої організації можуть ${organizationAccess === 'edit' ? 'редагувати' : 'переглядати'} цей робочий зошит`
+								: 'Тільки ви маєте доступ до цього робочого зошиту'
 						}}
 					</div>
 				</div>

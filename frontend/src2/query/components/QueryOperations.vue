@@ -245,7 +245,7 @@ const CustomOperationInfo = (props: any) => {
 	<div v-if="query.doc.operations.length" class="flex w-full flex-col px-3.5 py-3">
 		<div class="mb-2 flex h-6 items-center justify-between">
 			<div class="flex items-center gap-1">
-				<div class="text-sm font-medium">Operations</div>
+				<div class="text-sm font-medium">Операції</div>
 			</div>
 			<div></div>
 		</div>

@@ -22,7 +22,7 @@ const sql = ref(operation ? operation.raw_sql : '')
 function execute(force: boolean = false) {
 	if (!data_source.value) {
 		createToast({
-			title: 'Please select a data source first',
+			title: 'Спочатку оберіть джерело даних',
 			variant: 'error',
 		})
 		return
@@ -48,7 +48,7 @@ async function format() {
 		})
 	} catch (error) {
 		createToast({
-			title: 'Failed to format SQL',
+			title: 'Не вдалося відформатувати SQL',
 			variant: 'error',
 		})
 	} finally {
@@ -128,7 +128,7 @@ const completions = computed(() => {
 					/>
 				</div>
 				<div class="flex flex-shrink-0 gap-1 border-t p-1">
-					<Button @click="execute(true)" label="Execute">
+					<Button @click="execute(true)" label="Виконати">
 						<template #prefix>
 							<Play class="h-3.5 w-3.5 text-gray-700" stroke-width="1.5" />
 						</template>
@@ -151,8 +151,8 @@ const completions = computed(() => {
 			>
 				<div class="h-2 w-2 rounded-full bg-green-500"></div>
 				<div>
-					<span v-if="query.result.timeTaken == -1"> Fetched from cache </span>
-					<span v-else> Fetched in {{ query.result.timeTaken }}s </span>
+					<span v-if="query.result.timeTaken == -1"> Отримано з кешу</span>
+					<span v-else> Отримано за {{ query.result.timeTaken }}с</span>
 					<span> {{ useTimeAgo(query.result.lastExecutedAt).value }} </span>
 				</div>
 			</div>

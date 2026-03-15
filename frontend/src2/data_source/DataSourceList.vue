@@ -38,7 +38,7 @@ const sourceTypes = [
 	{
 		label: 'MariaDB',
 		icon: getDatabaseLogo('MariaDB'),
-		description: 'Connect to MariaDB database',
+		description: "З'єднати з базою даних MariaDB",
 		onClick: () => {
 			showNewSourceDialog.value = false
 			showNewMariaDBDialog.value = true
@@ -47,7 +47,7 @@ const sourceTypes = [
 	{
 		label: 'PostgreSQL',
 		icon: getDatabaseLogo('PostgreSQL'),
-		description: 'Connect to PostgreSQL database',
+		description: "З'єднати з базою даних PostgreSQL",
 		onClick: () => {
 			showNewSourceDialog.value = false
 			showNewPostgreSQLDialog.value = true
@@ -56,7 +56,7 @@ const sourceTypes = [
 	{
 		label: 'ClickHouse',
 		icon: getDatabaseLogo('ClickHouse'),
-		description: 'Connect to ClickHouse database',
+		description: "З'єднати з базою даних ClickHouse",
 		onClick: () => {
 			showNewSourceDialog.value = false
 			showNewClickHouseDialog.value = true
@@ -65,16 +65,16 @@ const sourceTypes = [
 	{
 		label: 'DuckDB',
 		icon: getDatabaseLogo('DuckDB'),
-		description: 'Connect to DuckDB database',
+		description: "З'єднати з базою даних DuckDB",
 		onClick: () => {
 			showNewSourceDialog.value = false
 			showNewDuckDBDialog.value = true
 		},
 	},
 	{
-		label: 'Upload CSV or Excel',
+		label: 'Завантажити CSV або Excel',
 		icon: <CSVIcon class="h-8 w-8" />,
-		description: 'Upload a CSV or Excel file to create a new data source',
+		description: 'Завантажте CSV або Excel файл для створення нового джерела даних',
 		onClick: () => {
 			showNewSourceDialog.value = false
 			showCSVFileUploadDialog.value = true
@@ -86,7 +86,7 @@ const userStore = useUserStore()
 const listOptions = ref({
 	columns: [
 		{
-			label: 'Title',
+			label: 'Назва',
 			key: 'title',
 			prefix: (props: any) => {
 				const data_source = props.row as DataSourceListItem
@@ -94,7 +94,7 @@ const listOptions = ref({
 			},
 		},
 		{
-			label: 'Status',
+			label: 'Статус',
 			key: 'status',
 			prefix: (props: any) => {
 				const color = props.row.status == 'Inactive' ? 'text-gray-500' : 'text-green-500'
@@ -102,7 +102,7 @@ const listOptions = ref({
 			},
 		},
 		{
-			label: 'Owner',
+			label: 'Власник',
 			key: 'owner',
 			getLabel(props: any) {
 				const data_source = props.row as DataSourceListItem
@@ -115,8 +115,8 @@ const listOptions = ref({
 				return <Avatar size="md" label={data_source.owner} image={imageUrl} />
 			},
 		},
-		{ label: 'Created', key: 'created_from_now' },
-		{ label: 'Modified', key: 'modified_from_now' },
+		{ label: 'Створено', key: 'created_from_now' },
+		{ label: 'Змінено', key: 'modified_from_now' },
 	],
 	rows: filteredDataSources,
 	rowKey: 'name',
@@ -126,10 +126,10 @@ const listOptions = ref({
 			path: `/data-source/${data_source.name}`,
 		}),
 		emptyState: {
-			title: 'No data sources.',
-			description: 'No data sources to display.',
+			title: 'Немає джерел даних.',
+			description: 'Немає джерел даних для відображення.',
 			button: {
-				label: 'New Data Source',
+				label: 'Нове джерело даних',
 				variant: 'solid',
 				onClick: () => (showNewSourceDialog.value = true),
 			},
@@ -137,14 +137,14 @@ const listOptions = ref({
 	},
 })
 
-document.title = 'Data Sources | Insights'
+document.title = 'Джерела даних | Insights'
 </script>
 
 <template>
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
-		<Breadcrumbs :items="[{ label: 'Data Sources', route: '/data-source' }]" />
+		<Breadcrumbs :items="[{ label: 'Джерела даних', route: '/data-source' }]" />
 		<div class="flex items-center gap-2">
-			<Button label="New Data Source" variant="solid" @click="showNewSourceDialog = true">
+			<Button label="Нове джерело даних" variant="solid" @click="showNewSourceDialog = true">
 				<template #prefix>
 					<PlusIcon class="w-4" />
 				</template>
@@ -154,7 +154,7 @@ document.title = 'Data Sources | Insights'
 
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl placeholder="Search by Title" v-model="searchQuery" :debounce="300">
+			<FormControl placeholder="Пошук за назвою" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -166,7 +166,7 @@ document.title = 'Data Sources | Insights'
 	<SelectTypeDialog
 		v-model="showNewSourceDialog"
 		:types="sourceTypes"
-		title="Select a data source"
+		title="Оберіть джерело даних"
 	/>
 
 	<ConnectMariaDBDialog v-model="showNewMariaDBDialog" />

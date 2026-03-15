@@ -136,7 +136,7 @@ function onExport(format: 'csv' | 'excel', filename: string) {
 		</template>
 		<template #footer-left>
 			<div class="tnum flex items-center gap-1 text-sm text-gray-600">
-				<span> Showing {{ previewRowCount.toLocaleString() }} of </span>
+				<span> Показано {{ previewRowCount.toLocaleString() }} з </span>
 				<span v-if="!totalRowCount" class="inline-block">
 					<Tooltip text="Load Count">
 						<RefreshCw
@@ -149,7 +149,7 @@ function onExport(format: 'csv' | 'excel', filename: string) {
 					</Tooltip>
 				</span>
 				<span v-else> {{ totalRowCount.toLocaleString() }} </span>
-				rows
+				рядків
 			</div>
 		</template>
 		<template #footer-right-actions>

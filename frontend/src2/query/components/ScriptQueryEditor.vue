@@ -120,8 +120,8 @@ function handleSaveVariables(variables: any[]) {
 		>
 			<div class="h-2 w-2 rounded-full bg-green-500"></div>
 			<div>
-				<span v-if="query.result.timeTaken == -1"> Fetched from cache </span>
-				<span v-else> Fetched in {{ query.result.timeTaken }}s </span>
+				<span v-if="query.result.timeTaken == -1"> Отримано з кешу</span>
+				<span v-else> Отримано за {{ query.result.timeTaken }}с</span>
 				<span> {{ useTimeAgo(query.result.lastExecutedAt).value }} </span>
 			</div>
 		</div>

@@ -60,16 +60,16 @@ function confirmSelection() {
 		v-model="showDialog"
 		:options="{
 			size: 'sm',
-			title: 'Select Charts',
+			title: 'Обрати діаграми',
 			actions: [
 				{
-					label: 'Add',
+					label: 'Додати',
 					variant: 'solid',
 					disabled: areNoneSelected,
 					onClick: confirmSelection,
 				},
 				{
-					label: 'Cancel',
+					label: 'Скасувати',
 					onClick: () => (showDialog = false),
 				},
 			],
@@ -81,7 +81,7 @@ function confirmSelection() {
 					<FormControl
 						class="flex-1"
 						autocomplete="off"
-						placeholder="Search by name"
+						placeholder="Пошук за назвою"
 						v-model="searchQuery"
 					>
 						<template #prefix>

@@ -20,7 +20,7 @@ const showShareDialog = ref(false)
 			<template #prefix>
 				<Share2 class="h-4 w-4 text-gray-700" stroke-width="1.5" />
 			</template>
-			Share
+			Поділитися
 		</Button>
 		<!-- <Button
 			v-show="!workbook.islocal && workbook.isdirty"
@@ -49,7 +49,7 @@ const showShareDialog = ref(false)
 			:options="[
 				!workbook.doc.read_only
 					? {
-							label: 'Duplicate',
+							label: 'Дублювати',
 							icon: 'copy',
 							onClick: () => workbook.duplicate(),
 					  }
@@ -61,7 +61,7 @@ const showShareDialog = ref(false)
 				},
 				!workbook.islocal
 					? {
-							label: 'Delete',
+							label: 'Видалити',
 							icon: 'trash-2',
 							onClick: () => workbook.delete(),
 					  }

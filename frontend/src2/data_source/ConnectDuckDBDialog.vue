@@ -18,7 +18,7 @@ const form = ref()
 const fields = [
 	{
 		name: 'title',
-		label: 'Title',
+		label: 'Назва',
 		type: 'text',
 		placeholder: 'My Database',
 		required: true,
@@ -43,7 +43,7 @@ const sources = useDataSourceStore()
 const connected = ref<boolean | null>(null)
 const connectButton = computed(() => {
 	const _button = {
-		label: 'Connect',
+		label: "З'єднати",
 		disabled:
 			form.value?.hasRequiredFields === false || !isValidFileURL.value || sources.testing,
 		loading: sources.testing,
@@ -57,13 +57,13 @@ const connectButton = computed(() => {
 	}
 
 	if (sources.testing) {
-		_button.label = 'Connecting...'
+		_button.label = "З'єднання..."
 	} else if (connected.value) {
-		_button.label = 'Connected'
+		_button.label = "З'єднано"
 		_button.variant = 'outline'
 		_button.theme = 'green'
 	} else if (connected.value === false) {
-		_button.label = 'Failed, Retry?'
+		_button.label = 'Помилка, спробувати ще?'
 		_button.variant = 'outline'
 		_button.theme = 'red'
 	}
@@ -73,7 +73,7 @@ const connectButton = computed(() => {
 
 const submitButton = computed(() => {
 	return {
-		label: 'Add Data Source',
+		label: 'Додати джерело даних',
 		disabled:
 			form.value?.hasRequiredFields === false ||
 			!isValidFileURL.value ||
@@ -91,7 +91,7 @@ const submitButton = computed(() => {
 </script>
 
 <template>
-	<Dialog v-model="show" :options="{ title: 'Connect to DuckDB' }">
+	<Dialog v-model="show" :options="{ title: 'З\'єднання з DuckDB' }">
 		<template #body-content>
 			<Form
 				ref="form"

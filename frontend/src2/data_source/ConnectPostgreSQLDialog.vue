@@ -24,13 +24,13 @@ const form = ref()
 const fields = [
 	{
 		name: 'title',
-		label: 'Title',
+		label: 'Назва',
 		type: 'text',
 		placeholder: 'My Database',
 		required: true,
 	},
 	{
-		label: 'Host',
+		label: 'Хост',
 		name: 'host',
 		type: 'text',
 		placeholder: 'localhost',
@@ -38,7 +38,7 @@ const fields = [
 		defaultValue: 'localhost',
 	},
 	{
-		label: 'Port',
+		label: 'Порт',
 		name: 'port',
 		type: 'number',
 		placeholder: '5432',
@@ -46,7 +46,7 @@ const fields = [
 		defaultValue: 5432,
 	},
 	{
-		label: 'Database Name',
+		label: 'Назва бази даних',
 		name: 'database_name',
 		type: 'text',
 		placeholder: 'DB_1267891',
@@ -60,20 +60,20 @@ const fields = [
 		required: false,
 	},
 	{
-		label: 'Username',
+		label: "Ім'я користувача",
 		name: 'username',
 		type: 'text',
 		placeholder: 'read_only_user',
 		required: true,
 	},
 	{
-		label: 'Password',
+		label: 'Пароль',
 		name: 'password',
 		type: 'password',
 		placeholder: '**********',
 		required: true,
 	},
-	{ label: 'Use secure connection (SSL)?', name: 'use_ssl', type: 'checkbox' },
+	{ label: 'Використовувати захищене з\'єднання (SSL)?', name: 'use_ssl', type: 'checkbox' },
 ]
 
 const sources = useDataSourceStore()
@@ -81,7 +81,7 @@ const sources = useDataSourceStore()
 const connected = ref<boolean | null>(null)
 const connectButton = computed(() => {
 	const _button = {
-		label: 'Connect',
+		label: "З'єднати",
 		disabled: form.value?.hasRequiredFields === false,
 		loading: sources.testing,
 		variant: 'subtle',
@@ -94,13 +94,13 @@ const connectButton = computed(() => {
 	}
 
 	if (sources.testing) {
-		_button.label = 'Connecting...'
+		_button.label = "З'єднання..."
 	} else if (connected.value) {
-		_button.label = 'Connected'
+		_button.label = "З'єднано"
 		_button.variant = 'outline'
 		_button.theme = 'green'
 	} else if (connected.value === false) {
-		_button.label = 'Failed, Retry?'
+		_button.label = 'Помилка, спробувати ще?'
 		_button.variant = 'outline'
 		_button.theme = 'red'
 	}
@@ -110,7 +110,7 @@ const connectButton = computed(() => {
 
 const submitButton = computed(() => {
 	return {
-		label: 'Add Data Source',
+		label: 'Додати джерело даних',
 		disabled: form.value?.hasRequiredFields === false || !connected.value || sources.creating,
 		loading: sources.creating,
 		variant: connected.value ? 'solid' : 'subtle',
@@ -124,7 +124,7 @@ const submitButton = computed(() => {
 </script>
 
 <template>
-	<Dialog v-model="show" :options="{ title: 'Connect to PostgreSQL' }">
+	<Dialog v-model="show" :options="{ title: 'З\'єднання з PostgreSQL' }">
 		<template #body-content>
 			<Form
 				ref="form"

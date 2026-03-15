@@ -55,20 +55,20 @@ function importTable() {
 </script>
 
 <template>
-	<Dialog v-model="show" :options="{ title: 'Import Table', size: 'md' }">
+	<Dialog v-model="show" :options="{ title: 'Імпортувати таблицю', size: 'md' }">
 		<template #body-content>
 			<div class="flex w-full flex-col gap-2">
 				<div class="flex flex-col gap-4">
 					<Autocomplete
-						label="Data Source"
-						placeholder="Select Data Source"
+						label="Джерело даних"
+						placeholder="Оберіть джерело даних"
 						:modelValue="table.data_source"
 						@update:modelValue="table.data_source = $event?.value"
 						:options="getDataSourceOptions()"
 					/>
 					<Autocomplete
-						label="Table"
-						placeholder="Select Table"
+						label="Таблиця"
+						placeholder="Оберіть таблицю"
 						v-model:query="dataSourceTableQuery"
 						:disabled="!table.data_source"
 						:modelValue="table.table_name"
@@ -78,7 +78,7 @@ function importTable() {
 					<div v-if="table.table_name">
 						<FormControl
 							type="number"
-							label="No. of rows to import"
+							label="Кількість рядків для імпорту"
 							v-model="table.row_limit"
 						/>
 						<p class="mt-1 text-xs text-gray-500">
@@ -87,9 +87,9 @@ function importTable() {
 					</div>
 				</div>
 				<div class="flex w-full justify-end gap-2 pt-2">
-					<Button label="Cancel" variant="outline" @click="cancelImport" />
+					<Button label="Скасувати" variant="outline" @click="cancelImport" />
 					<Button
-						label="Import"
+						label="Імпортувати"
 						variant="solid"
 						:disabled="importDisabled"
 						:loading="dataStore.importingTable"

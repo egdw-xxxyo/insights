@@ -34,11 +34,11 @@ const filteredTables = computed(() => {
 const listOptions = computed(() => ({
 	columns: [
 		{
-			label: 'Table Name',
+			label: 'Назва таблиці',
 			key: 'table_name',
 		},
 		{
-			label: 'Data Source',
+			label: 'Джерело даних',
 			key: 'data_source',
 			prefix: (props: any) => {
 				const table = props.row as DataStoreTable
@@ -46,7 +46,7 @@ const listOptions = computed(() => ({
 			},
 		},
 		{
-			label: 'Last Synced',
+			label: 'Остання синхронізація',
 			key: 'last_synced_from_now',
 		},
 	],
@@ -55,11 +55,11 @@ const listOptions = computed(() => ({
 	options: {
 		showTooltip: false,
 		emptyState: {
-			title: 'No Tables Stored',
-			description: 'No tables found in the data store.',
+			title: 'Немає збережених таблиць',
+			description: 'Не знайдено таблиць у сховищі даних.',
 			button: session.user.is_admin
 				? {
-						label: 'Import Table',
+						label: 'Імпортувати таблицю',
 						iconLeft: 'plus',
 						variant: 'solid',
 						loading: false,
@@ -74,11 +74,11 @@ const listOptions = computed(() => ({
 
 <template>
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
-		<Breadcrumbs :items="[{ label: 'Data Store', route: '/data-store' }]" />
+		<Breadcrumbs :items="[{ label: 'Сховище даних', route: '/data-store' }]" />
 		<div class="flex items-center gap-2">
 			<Button
 				v-if="session.user.is_admin"
-				label="Import Table"
+				label="Імпортувати таблицю"
 				variant="solid"
 				@click="showImportTableDialog = true"
 			>
@@ -91,7 +91,7 @@ const listOptions = computed(() => ({
 
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl placeholder="Search" v-model="searchQuery" :debounce="300">
+			<FormControl placeholder="Пошук" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>

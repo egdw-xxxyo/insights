@@ -31,10 +31,10 @@ function saveChanges() {
 	<Dialog
 		v-model="show"
 		:options="{
-			title: 'Share Chart',
+			title: 'Поділитися діаграмою',
 			actions: [
 				{
-					label: 'Done',
+					label: 'Готово',
 					variant: 'solid',
 					disabled: !hasChanged,
 					onClick: saveChanges,
@@ -49,10 +49,10 @@ function saveChanges() {
 						<Globe class="h-6 w-6 text-blue-500" stroke-width="1.5" />
 						<div class="flex flex-1 flex-col">
 							<div class="font-medium leading-5 text-gray-800">
-								Enable Public Access
+								Увімкнути публічний доступ
 							</div>
 							<div class="text-sm text-gray-700">
-								Anyone with the link can view this chart
+								Будь-хто з посиланням може переглядати цю діаграму
 							</div>
 						</div>
 						<Toggle v-model="isPublic" />

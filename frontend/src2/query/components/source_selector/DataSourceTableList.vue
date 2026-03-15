@@ -71,7 +71,7 @@ const emptyState = computed(() => {
 		<div class="flex justify-between overflow-visible py-1">
 			<div class="flex gap-2">
 				<FormControl
-					placeholder="Search by Title"
+					placeholder="Пошук за назвою"
 					v-model="tableSearchQuery"
 					autocomplete="off"
 				>

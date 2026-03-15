@@ -44,7 +44,7 @@ function saveChanges() {
 	})
 	createToast({
 		variant: 'success',
-		title: 'Dashboard Access Updated',
+		title: 'Доступ до дашборду оновлено',
 	})
 	show.value = false
 }
@@ -79,10 +79,10 @@ const generalAccess = computed({
 	<Dialog
 		v-model="show"
 		:options="{
-			title: 'Share Dashboard',
+			title: 'Поділитися дашбордом',
 			actions: [
 				{
-					label: 'Done',
+					label: 'Готово',
 					variant: 'solid',
 					disabled: !hasChanged,
 					onClick: saveChanges,
@@ -93,7 +93,7 @@ const generalAccess = computed({
 		<template #body-content>
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<span class="text-sm text-gray-600">General Access</span>
+					<span class="text-sm text-gray-600">Загальний доступ</span>
 					<div class="flex gap-2">
 						<div class="flex-1">
 							<Autocomplete
@@ -102,15 +102,15 @@ const generalAccess = computed({
 								v-model="generalAccess"
 								:options="[
 									{
-										label: 'Anyone with the link can view',
+										label: 'Будь-хто з посиланням може переглядати',
 										value: 'anyone',
 									},
 									{
-										label: 'Anyone in the organization can view',
+										label: 'Будь-хто в організації може переглядати',
 										value: 'organization',
 									},
 									{
-										label: 'Specific people can view',
+										label: 'Конкретні люди можуть переглядати',
 										value: 'specific',
 									},
 								]"
@@ -140,12 +140,12 @@ const generalAccess = computed({
 						<Button
 							class="flex-shrink-0"
 							variant="solid"
-							label="Share"
+							label="Поділитися"
 							:disabled="!selectedUserEmail"
 							@click="addSharedUser"
 						></Button>
 					</div>
-					<span class="mb-2 text-sm text-gray-600">People with access</span>
+					<span class="mb-2 text-sm text-gray-600">Люди з доступом</span>
 					<div class="flex flex-col gap-1 overflow-y-auto">
 						<div class="flex w-full items-center gap-2 py-1">
 							<Avatar size="xl" label="You" :image="session.user.user_image" />
@@ -155,7 +155,7 @@ const generalAccess = computed({
 									{{ session.user.email }}
 								</div>
 							</div>
-							<Badge size="lg" theme="orange">Owner</Badge>
+							<Badge size="lg" theme="orange">Власник</Badge>
 						</div>
 						<div
 							v-for="user in peopleWithAccess"

@@ -15,7 +15,7 @@ const moreActions = computed(() => {
 
 	if (!query.doc.use_live_connection && session.user.is_admin) {
 		actions.push({
-			label: 'Refresh Stored Tables',
+			label: 'Оновити збережені таблиці',
 			icon: h(RefreshCw, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 			onClick: query.refreshStoredTables,
 		})
@@ -23,17 +23,17 @@ const moreActions = computed(() => {
 
 	actions.push(
 		{
-			label: 'View SQL',
+			label: 'Переглянути SQL',
 			icon: h(Scroll, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 			onClick: () => (showViewSQLDialog.value = true),
 		},
 		{
-			label: 'Duplicate Query',
+			label: 'Дублювати запит',
 			icon: h(CopyPlus, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 			onClick: () => query.duplicate(),
 		},
 		{
-			label: 'Copy Query',
+			label: 'Копіювати запит',
 			icon: h(Copy, { class: 'h-3 w-3 text-gray-700', strokeWidth: 1.5 }),
 			onClick: () => query.copy(),
 		},
@@ -52,8 +52,8 @@ const moreActions = computed(() => {
 			>
 				<div class="h-2 w-2 rounded-full bg-green-500"></div>
 				<div>
-					<span v-if="query.result.timeTaken == -1"> Fetched from cache </span>
-					<span v-else> Fetched in {{ query.result.timeTaken }}s </span>
+					<span v-if="query.result.timeTaken == -1"> Отримано з кешу</span>
+					<span v-else> Отримано за {{ query.result.timeTaken }}с</span>
 					<span> {{ useTimeAgo(query.result.lastExecutedAt).value }} </span>
 				</div>
 			</div>
@@ -61,7 +61,7 @@ const moreActions = computed(() => {
 		<div class="flex items-center gap-2">
 			<Button
 				variant="ghost"
-				label="Execute"
+				label="Виконати"
 				@click="() => query.execute(true)"
 				class="!h-6 !gap-1.5 bg-white !px-2 text-xs shadow"
 			>

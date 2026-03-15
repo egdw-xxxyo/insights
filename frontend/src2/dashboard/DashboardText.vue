@@ -20,10 +20,10 @@ const editedText = ref(unref(props.item.text))
 		:modelValue="dashboard.isEditingItem(props.item)"
 		@update:modelValue="!$event ? (dashboard.editingItemIndex = undefined) : true"
 		:options="{
-			title: 'Edit Text',
+			title: 'Редагувати текст',
 			actions: [
 				{
-					label: 'Save',
+					label: 'Зберегти',
 					variant: 'solid',
 					disabled:
 						!editedText || editedText.trim() === '' || editedText === props.item.text,
@@ -33,7 +33,7 @@ const editedText = ref(unref(props.item.text))
 					},
 				},
 				{
-					label: 'Cancel',
+					label: 'Скасувати',
 					onClick: () => (dashboard.editingItemIndex = undefined),
 				},
 			],
@@ -41,7 +41,7 @@ const editedText = ref(unref(props.item.text))
 	>
 		<template #body-content>
 			<div class="space-y-2">
-				<span class="block text-sm leading-4 text-gray-700">Content</span>
+				<span class="block text-sm leading-4 text-gray-700">Вміст</span>
 				<TextEditor
 					ref="textEditor"
 					:editable="true"

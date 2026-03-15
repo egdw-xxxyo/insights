@@ -10,12 +10,12 @@ const dashboard = inject('dashboard') as Dashboard
 const actions = [
 	{
 		icon: 'edit',
-		label: 'Edit',
+		label: 'Редагувати',
 		onClick: () => (dashboard.editingItemIndex = props.itemIndex),
 	},
 	{
 		icon: 'trash',
-		label: 'Delete',
+		label: 'Видалити',
 		onClick: () => dashboard.removeItem(props.itemIndex),
 	},
 ]

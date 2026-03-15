@@ -6,20 +6,20 @@ import TabbedSidebarLayout, { Tab, TabGroup } from '../components/TabbedSidebarL
 const showDialog = defineModel({ required: true, default: false })
 const tabGroups: TabGroup[] = [
 	{
-		groupLabel: 'Account',
+		groupLabel: 'Обліковий запис',
 		tabs: [
 			{
-				label: 'Profile',
+				label: 'Профіль',
 				icon: CircleUser,
 				component: defineAsyncComponent(() => import('./ProfileSettings.vue')),
 			},
 		],
 	},
 	{
-		groupLabel: 'Organization',
+		groupLabel: 'Організація',
 		tabs: [
 			{
-				label: 'General',
+				label: 'Загальні',
 				icon: SettingsIcon,
 				component: defineAsyncComponent(() => import('./GeneralSettings.vue')),
 			},
@@ -29,17 +29,17 @@ const tabGroups: TabGroup[] = [
 			// 	component: () => {},
 			// },
 			{
-				label: 'Users',
+				label: 'Користувачі',
 				icon: Users,
 				component: defineAsyncComponent(() => import('./UsersSettings.vue')),
 			},
 			{
-				label: 'Permissions',
+				label: 'Дозволи',
 				icon: KeyRound,
 				component: defineAsyncComponent(() => import('./PermissionsSettings.vue')),
 			},
 			{
-				label: 'Data Store',
+				label: 'Сховище даних',
 				icon: DatabaseZap,
 				component: defineAsyncComponent(() => import('./DataStoreSettings.vue')),
 			},
@@ -54,7 +54,7 @@ const activeTab = shallowRef<Tab>(tabGroups[0].tabs[0])
 		<template #body>
 			<div class="relative flex text-base" :style="{ height: 'calc(100vh - 12rem)' }">
 				<TabbedSidebarLayout
-					title="Settings"
+					title="Налаштування"
 					:tabs="tabGroups"
 					v-model:activeTab="activeTab"
 				/>

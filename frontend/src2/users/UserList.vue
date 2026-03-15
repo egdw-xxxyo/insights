@@ -25,7 +25,7 @@ const filteredUsers = computed(() => {
 const listOptions = ref({
 	columns: [
 		{
-			label: 'User',
+			label: 'Користувач',
 			key: 'full_name',
 			prefix: (props: any) => {
 				const user = props.row as User
@@ -33,7 +33,7 @@ const listOptions = ref({
 			},
 		},
 		{
-			label: 'Status',
+			label: 'Статус',
 			key: 'enabled',
 			getLabel: (props: any) => {
 				const user = props.row as User
@@ -42,7 +42,7 @@ const listOptions = ref({
 						? 'Invitation Sent'
 						: 'Invitation Expired'
 				}
-				return props.row.enabled ? 'Enabled' : 'Disabled'
+				return props.row.enabled ? 'Увімкнено' : 'Вимкнено'
 			},
 			prefix: (props: any) => {
 				let color
@@ -61,7 +61,7 @@ const listOptions = ref({
 			key: 'email',
 		},
 		{
-			label: 'Last Active',
+			label: 'Остання активність',
 			key: 'last_active',
 			getLabel: (props: any) => {
 				if (!props.row.last_active) {
@@ -76,11 +76,11 @@ const listOptions = ref({
 	options: {
 		showTooltip: false,
 		emptyState: {
-			title: 'No users.',
-			description: 'No users to display.',
+			title: 'Немає користувачів.',
+			description: 'Немає користувачів для відображення.',
 			button: session.user.is_admin
 				? {
-						label: 'Invite User',
+						label: 'Запросити користувача',
 						variant: 'solid',
 						onClick: () => (showInviteUserDialog.value = true),
 				  }
@@ -137,16 +137,16 @@ function sendInvitation() {
 	showInviteUserDialog.value = false
 }
 
-document.title = 'Users | Insights'
+document.title = 'Користувачі | Insights'
 </script>
 
 <template>
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
-		<Breadcrumbs :items="[{ label: 'Users', route: '/users' }]" />
+		<Breadcrumbs :items="[{ label: 'Користувачі', route: '/users' }]" />
 		<div class="flex items-center gap-2">
 			<Button
 				v-if="session.user.is_admin"
-				label="Invite User"
+				label="Запросити користувача"
 				variant="solid"
 				@click="showInviteUserDialog = true"
 			>
@@ -159,7 +159,7 @@ document.title = 'Users | Insights'
 
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl placeholder="Search" v-model="searchQuery" :debounce="300">
+			<FormControl placeholder="Пошук" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -171,10 +171,10 @@ document.title = 'Users | Insights'
 	<Dialog
 		v-model="showInviteUserDialog"
 		:options="{
-			title: 'Invite User',
+			title: 'Запросити користувача',
 			actions: [
 				{
-					label: 'Send Invitation',
+					label: 'Надіслати запрошення',
 					variant: 'solid',
 					disabled: !areAllEmailsValid,
 					loading: userStore.sendingInvitation,

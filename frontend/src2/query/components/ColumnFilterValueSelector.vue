@@ -66,7 +66,7 @@ function toggleSort() {
 	<div class="flex flex-col gap-2">
 		<div class="flex items-center gap-2">
 			<FormControl
-				placeholder="Search"
+				placeholder="Пошук"
 				v-model="searchInput"
 				autocomplete="off"
 				class="flex-1"

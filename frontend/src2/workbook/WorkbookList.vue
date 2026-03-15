@@ -38,7 +38,7 @@ const userStore = useUserStore()
 const listOptions = ref({
 	columns: [
 		{
-			label: 'Title',
+			label: 'Назва',
 			key: 'title',
 			width: 4,
 		},
@@ -85,7 +85,7 @@ const listOptions = ref({
 			},
 		},
 		{
-			label: 'Owner',
+			label: 'Власник',
 			key: 'owner',
 			width: 2,
 			getLabel(props: any) {
@@ -99,7 +99,7 @@ const listOptions = ref({
 				return <Avatar size="md" label={workbook.owner} image={user?.user_image} />
 			},
 		},
-		{ label: 'Modified', key: 'modified_from_now', width: 2 },
+		{ label: 'Змінено', key: 'modified_from_now', width: 2 },
 	],
 	rows: workbooks,
 	rowKey: 'name',
@@ -109,10 +109,10 @@ const listOptions = ref({
 			path: `/workbook/${workbook.name}`,
 		}),
 		emptyState: {
-			title: 'No workbooks.',
-			description: 'No workbooks to display.',
+			title: 'Немає робочих зошитів.',
+			description: 'Немає робочих зошитів для відображення.',
 			button: {
-				label: 'New Workbook',
+				label: 'Новий робочий зошит',
 				variant: 'solid',
 				onClick: openNewWorkbook,
 				loading: creatingWorkbook,
@@ -138,16 +138,16 @@ whenever(cmdV, () => {
 })
 
 watchEffect(() => {
-	document.title = 'Workbooks | Insights'
+	document.title = 'Робочі зошити | Insights'
 })
 </script>
 
 <template>
 	<header class="flex h-12 items-center justify-between border-b py-2.5 pl-5 pr-2">
-		<Breadcrumbs :items="[{ label: 'Workbooks', route: '/workbook' }]" />
+		<Breadcrumbs :items="[{ label: 'Робочі зошити', route: '/workbook' }]" />
 		<div class="flex items-center gap-2">
 			<Button
-				label="New Workbook"
+				label="Новий робочий зошит"
 				variant="solid"
 				@click="openNewWorkbook"
 				:loading="creatingWorkbook"
@@ -162,7 +162,7 @@ watchEffect(() => {
 	<div class="mb-4 flex h-full flex-col gap-3 overflow-auto px-5 py-3">
 		<div class="flex gap-2 overflow-visible py-1">
 			<FormControl
-				placeholder="Search by Title"
+				placeholder="Пошук за назвою"
 				v-model="searchQuery"
 				:debounce="300"
 				autocomplete="off"

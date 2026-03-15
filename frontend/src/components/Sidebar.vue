@@ -61,7 +61,7 @@
 						<div
 							class="w-fit rounded border border-gray-100 bg-gray-800 px-2 py-1 text-xs text-white shadow-xl"
 						>
-							v2 is being discontinued
+							{{ __('v2 is being discontinued') }}
 						</div>
 					</template>
 					<Button
@@ -79,34 +79,34 @@
 					placement="left"
 					:options="[
 						{
-							label: 'Documentation',
+							label: __('Documentation'),
 							icon: 'help-circle',
 							onClick: () => open('https://docs.frappeinsights.com'),
 						},
 						{
-							label: 'Join Telegram Group',
+							label: __('Join Telegram Group'),
 							icon: 'message-circle',
 							onClick: () => open('https://t.me/frappeinsights'),
 						},
 						{
-							label: 'Help',
+							label: __('Help'),
 							icon: 'life-buoy',
 							onClick: () => (showHelpDialog = true),
 						},
 						session.user.is_admin
 							? {
-									label: 'Switch to Desk',
+									label: __('Switch to Desk'),
 									icon: 'grid',
 									onClick: () => open('/app'),
 							  }
 							: null,
 						{
-							label: 'Open Insights v3',
+							label: __('Open Insights v3'),
 							icon: 'grid',
 							onClick: () => (showSwitchToV3Dialog = true),
 						},
 						{
-							label: 'Logout',
+							label: __('Logout'),
 							icon: 'log-out',
 							onClick: () => session.logout(),
 						},
@@ -138,10 +138,10 @@
 	<Dialog
 		v-model="showSwitchToV3Dialog"
 		:options="{
-			title: 'Insights v2 is being discontinued',
+			title: __("Insights v2 is being discontinued"),
 			actions: [
 				{
-					label: 'Open Insights v3',
+					label: __("Open Insights v3"),
 					variant: 'solid',
 					onClick: openInsightsV3,
 				},
@@ -151,20 +151,16 @@
 		<template #body-content>
 			<div class="space-y-3 text-sm leading-relaxed text-gray-700">
 				<p>
-					You are currently using Insights v2. A newer version — Insights v3 — is
-					available with a better experience and ongoing improvements. This interface will
-					be removed on <strong>April 2, 2026</strong>.
+					{{ __('You are currently using Insights v2. A newer version — Insights v3 — is available with a better experience and ongoing improvements. This interface will be removed on') }} <strong>April 2, 2026</strong>.
 				</p>
 				<p>
-					You'll need to recreate your important dashboards and queries in v3. Automatic
-					migration from v2 to v3 isn't possible because the two versions are built
-					differently. Your existing work in v2 stays untouched until the removal date.
+					{{ __("You'll need to recreate your important dashboards and queries in v3. Automatic migration from v2 to v3 isn't possible because the two versions are built differently. Your existing work in v2 stays untouched until the removal date.") }}
 				</p>
 			</div>
 			<div class="mt-4">
 				<FormControl
 					type="checkbox"
-					label="Always open Insights v3 by default"
+					:label="__('Always open Insights v3 by default')"
 					:modelValue="session.user.default_version === 'v3'"
 					@update:modelValue="session.user.default_version = $event ? 'v3' : ''"
 				/>
@@ -176,6 +172,7 @@
 <script setup>
 import { Avatar } from 'frappe-ui'
 
+import { __ } from '@/translation'
 import sessionStore from '@/stores/sessionStore'
 import settingsStore from '@/stores/settingsStore'
 import {
@@ -202,41 +199,41 @@ const showSwitchToV3Dialog = ref(false)
 const sidebarItems = ref([
 	{
 		path: '/',
-		label: 'Home',
+		label: __('Home'),
 		icon: HomeIcon,
 		name: 'Home',
 		current: false,
 	},
 	{
 		path: '/dashboard',
-		label: 'Dashboards',
+		label: __('Dashboards'),
 		icon: LayoutPanelTop,
 		name: 'Dashboard',
 		current: false,
 	},
 	{
 		path: '/query',
-		label: 'Query',
+		label: __('Query'),
 		icon: GanttChartSquare,
 		name: 'QueryList',
 		current: false,
 	},
 	{
 		path: '/data-source',
-		label: 'Data Sources',
+		label: __('Data Sources'),
 		icon: Database,
 		name: 'Data Source',
 	},
 	{
 		path: '/notebook',
-		label: 'Notebook',
+		label: __('Notebook'),
 		icon: Book,
 		name: 'Notebook',
 		current: false,
 	},
 	{
 		path: '/settings',
-		label: 'Settings',
+		label: __('Settings'),
 		icon: Settings,
 		name: 'Settings',
 		current: false,

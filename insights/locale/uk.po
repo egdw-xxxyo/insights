@@ -1,0 +1,1015 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: frappe\n"
+"Report-Msgid-Bugs-To: hello@frappe.io\n"
+"POT-Creation-Date: 2026-03-10 01:25+0000\n"
+"PO-Revision-Date: 2026-03-15 22:00+0200\n"
+"Last-Translator: serhii\n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+"Plural-Forms: nplurals=3; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<12 || n%100>14)) ? 1 : 2));\n"
+"X-Crowdin-Project: frappe\n"
+"X-Crowdin-Project-ID: 639578\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: /[frappe.insights] develop/insights/locale/main.pot\n"
+"X-Crowdin-File-ID: 152\n"
+"Language: uk_UA\n"
+
+msgid "1:1"
+msgstr "1:1"
+
+msgid "1:N"
+msgstr "1:N"
+
+msgid "Accepted"
+msgstr "Прийнято"
+
+msgid "Accepted At"
+msgstr "Прийнято о"
+
+msgid "Access"
+msgstr "Доступ"
+
+msgid "Action if table exists"
+msgstr "Дія, якщо таблиця існує"
+
+msgid "Active"
+msgstr "Активний"
+
+msgid "Aggregation"
+msgstr "Агрегація"
+
+msgid "Aggregation Condition"
+msgstr "Умова агрегації"
+
+msgid "Alert sent"
+msgstr "Сповіщення надіслано"
+
+msgid "Allow Subquery"
+msgstr "Дозволити підзапит"
+
+msgid "Allow Table Import"
+msgstr "Дозволити імпорт таблиці"
+
+msgid "Allowed Origins"
+msgstr "Дозволені джерела"
+
+msgid "Amended From"
+msgstr "Змінено з"
+
+msgid "API Configuration"
+msgstr "Конфігурація API"
+
+msgid "API Key / Bearer Token"
+msgstr "API-ключ / Bearer-токен"
+
+msgid "API Password"
+msgstr "Пароль API"
+
+msgid "API Token"
+msgstr "Токен API"
+
+msgid "API Username"
+msgstr "Ім'я користувача API"
+
+msgid "Append"
+msgstr "Додати"
+
+msgid "Apply User Permissions"
+msgstr "Застосувати дозволи користувача"
+
+msgid "asc"
+msgstr "за зростанням"
+
+msgid "Authentication Type"
+msgstr "Тип автентифікації"
+
+msgid "Auto Execute Query"
+msgstr "Автоматичне виконання запиту"
+
+msgid "Automatically arrange cards vertically to fill empty spaces"
+msgstr "Автоматично розташовувати картки вертикально для заповнення порожнього простору"
+
+msgid "Base URL"
+msgstr "Базова URL-адреса"
+
+msgid "Basic Authentication"
+msgstr "Базова автентифікація"
+
+msgid "Batch Size"
+msgstr "Розмір пакету"
+
+msgid "Before Import Script"
+msgstr "Скрипт перед імпортом"
+
+msgid "BigQuery"
+msgstr "BigQuery"
+
+msgid "BigQuery Configuration"
+msgstr "Конфігурація BigQuery"
+
+msgid "BigQuery Dataset ID"
+msgstr "ID набору даних BigQuery"
+
+msgid "BigQuery Project ID"
+msgstr "ID проєкту BigQuery"
+
+msgid "BigQuery Service Account Key (JSON)"
+msgstr "Ключ сервісного облікового запису BigQuery (JSON)"
+
+msgid "Bulk Enqueue"
+msgstr "Масова черга"
+
+msgid "Bulk Enqueue Import Job"
+msgstr "Масова черга завдань імпорту"
+
+msgid "Bulk Enqueue Progress"
+msgstr "Прогрес масової черги"
+
+msgid "Cache Query Results For (Minutes)"
+msgstr "Кешувати результати запиту (хвилин)"
+
+msgid "Cardinality"
+msgstr "Кардинальність"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "chart"
+msgstr "діаграма"
+
+msgid "Chart"
+msgstr "Діаграма"
+
+msgid "Chart Type"
+msgstr "Тип діаграми"
+
+msgid "ClickHouse"
+msgstr "ClickHouse"
+
+msgid "Collapse"
+msgstr "Згорнути"
+
+msgid "Column"
+msgstr "Стовпець"
+
+msgid "Columns"
+msgstr "Стовпці"
+
+msgid "Comma seperated URLs to whitelist for embedding charts & dashboards"
+msgstr "URL-адреси через кому для дозволу вбудовування діаграм та дашбордів"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Condition"
+msgstr "Умова"
+
+msgid "Config"
+msgstr "Конфігурація"
+
+msgid "Confirm"
+msgstr "Підтвердити"
+
+msgid "Connection String"
+msgstr "Рядок підключення"
+
+msgid "Content"
+msgstr "Вміст"
+
+msgid "Continue"
+msgstr "Продовжити"
+
+msgid "Cron"
+msgstr "Cron"
+
+msgid "Cron expression to schedule the script. Note: The scheduler checks for jobs every hour."
+msgstr "Cron-вираз для планування скрипту. Примітка: планувальник перевіряє завдання кожну годину."
+
+msgid "Cron Format"
+msgstr "Формат Cron"
+
+msgid "CumulativeSum"
+msgstr "Кумулятивна сума"
+
+msgid "Custom Condition"
+msgstr "Користувацька умова"
+
+msgid "Custom Headers"
+msgstr "Користувацькі заголовки"
+
+msgid "Custom headers for API requests (non-sensitive data only)"
+msgstr "Користувацькі заголовки для API-запитів (тільки нечутливі дані)"
+
+msgid "Daily"
+msgstr "Щоденно"
+
+msgid "Dashboards"
+msgstr "Дашборди"
+
+msgid "Data Backup"
+msgstr "Резервне копіювання даних"
+
+msgid "Data Query"
+msgstr "Запит даних"
+
+msgid "Data Source"
+msgstr "Джерело даних"
+
+msgid "Data Sources"
+msgstr "Джерела даних"
+
+msgid "Data Store"
+msgstr "Сховище даних"
+
+msgid "Database"
+msgstr "База даних"
+
+msgid "Database Name"
+msgstr "Назва бази даних"
+
+msgid "Database Type"
+msgstr "Тип бази даних"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Datetime"
+msgstr "Дата і час"
+
+msgid "Decimal"
+msgstr "Десятковий"
+
+msgid "desc"
+msgstr "за спаданням"
+
+msgid "Disabled"
+msgstr "Вимкнено"
+
+msgid "Documentation"
+msgstr "Документація"
+
+msgid "Draft"
+msgstr "Чернетка"
+
+msgid "DuckDB"
+msgstr "DuckDB"
+
+msgid "Duration (Seconds)"
+msgstr "Тривалість (секунди)"
+
+msgid "Email"
+msgstr "Електронна пошта"
+
+msgid "Email Sent At"
+msgstr "Лист надіслано о"
+
+msgid "Enable Data Store"
+msgstr "Увімкнути сховище даних"
+
+msgid "Enable Permissions"
+msgstr "Увімкнути дозволи"
+
+msgid "Enable Stored Procedure Execution"
+msgstr "Увімкнути виконання збережених процедур"
+
+msgid "Enabled"
+msgstr "Увімкнено"
+
+msgid "Ended At"
+msgstr "Завершено о"
+
+msgid "Enqueue"
+msgstr "Додати в чергу"
+
+msgid "Error"
+msgstr "Помилка"
+
+msgid "Execution Failed"
+msgstr "Помилка виконання"
+
+msgid "Execution Successful"
+msgstr "Виконано успішно"
+
+msgid "Execution Time (seconds)"
+msgstr "Час виконання (секунди)"
+
+msgid "Expand"
+msgstr "Розгорнути"
+
+msgid "Expired"
+msgstr "Прострочено"
+
+msgid "Expression"
+msgstr "Вираз"
+
+msgid "Fail"
+msgstr "Невдача"
+
+msgid "Failed"
+msgstr "Невдало"
+
+msgid "Failed to login"
+msgstr "Не вдалося увійти"
+
+msgid "Failed to setup demo data"
+msgstr "Не вдалося налаштувати демо-дані"
+
+msgid "Filters"
+msgstr "Фільтри"
+
+msgid "Fiscal Year Start"
+msgstr "Початок фінансового року"
+
+msgid "folder"
+msgstr "тека"
+
+msgid "Folder and item must belong to the same workbook"
+msgstr "Тека та елемент повинні належати до одного робочого зошита"
+
+msgid "Foreign Key"
+msgstr "Зовнішній ключ"
+
+msgid "Foreign Table"
+msgstr "Зовнішня таблиця"
+
+msgid "Foreign Table Label"
+msgstr "Мітка зовнішньої таблиці"
+
+msgid "Format Option"
+msgstr "Параметр формату"
+
+msgid "Frappe Insights"
+msgstr "Frappe Insights"
+
+msgid "Frequency"
+msgstr "Частота"
+
+msgid "Friday"
+msgstr "П'ятниця"
+
+msgid "Hidden"
+msgstr "Приховано"
+
+msgid "Host"
+msgstr "Хост"
+
+msgid "Hourly"
+msgstr "Щогодини"
+
+msgid "HTTP Headers"
+msgstr "HTTP-заголовки"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Import Job"
+msgstr "Завдання імпорту"
+
+msgid "Import job has been queued"
+msgstr "Завдання імпорту додано в чергу"
+
+msgid "Import Query"
+msgstr "Запит імпорту"
+
+msgid "Import to Warehouse"
+msgstr "Імпорт до сховища"
+
+msgid "In Progress"
+msgstr "В процесі"
+
+msgid "Inactive"
+msgstr "Неактивний"
+
+msgid "Insights Admin"
+msgstr "Адміністратор Insights"
+
+msgid "Insights Alert"
+msgstr "Сповіщення Insights"
+
+msgid "Insights Chart"
+msgstr "Діаграма Insights"
+
+msgid "Insights Chart v3"
+msgstr "Діаграма Insights v3"
+
+msgid "Insights Dashboard"
+msgstr "Дашборд Insights"
+
+msgid "Insights Dashboard Chart v3"
+msgstr "Діаграма дашборду Insights v3"
+
+msgid "Insights Dashboard Item"
+msgstr "Елемент дашборду Insights"
+
+msgid "Insights Dashboard v3"
+msgstr "Дашборд Insights v3"
+
+msgid "Insights Data Source"
+msgstr "Джерело даних Insights"
+
+msgid "Insights Data Source v3"
+msgstr "Джерело даних Insights v3"
+
+msgid "Insights Folder"
+msgstr "Тека Insights"
+
+msgid "Insights Notebook"
+msgstr "Блокнот Insights"
+
+msgid "Insights Notebook Page"
+msgstr "Сторінка блокнота Insights"
+
+msgid "Insights Query"
+msgstr "Запит Insights"
+
+msgid "Insights Query Chart"
+msgstr "Діаграма запиту Insights"
+
+msgid "Insights Query Column"
+msgstr "Стовпець запиту Insights"
+
+msgid "Insights Query Execution Log"
+msgstr "Журнал виконання запитів Insights"
+
+msgid "Insights Query Result"
+msgstr "Результат запиту Insights"
+
+msgid "Insights Query Table"
+msgstr "Таблиця запиту Insights"
+
+msgid "Insights Query Transform"
+msgstr "Перетворення запиту Insights"
+
+msgid "Insights Query v3"
+msgstr "Запит Insights v3"
+
+msgid "Insights Query Variable"
+msgstr "Змінна запиту Insights"
+
+msgid "Insights Resource Permission"
+msgstr "Дозвіл ресурсу Insights"
+
+msgid "Insights Secret Key"
+msgstr "Секретний ключ Insights"
+
+msgid "Insights Settings"
+msgstr "Налаштування Insights"
+
+msgid "Insights Table"
+msgstr "Таблиця Insights"
+
+msgid "Insights Table Column"
+msgstr "Стовпець таблиці Insights"
+
+msgid "Insights Table Import"
+msgstr "Імпорт таблиці Insights"
+
+msgid "Insights Table Import Job"
+msgstr "Завдання імпорту таблиці Insights"
+
+msgid "Insights Table Import Log"
+msgstr "Журнал імпорту таблиці Insights"
+
+msgid "Insights Table Link"
+msgstr "Зв'язок таблиці Insights"
+
+msgid "Insights Table Link v3"
+msgstr "Зв'язок таблиці Insights v3"
+
+msgid "Insights Table v3"
+msgstr "Таблиця Insights v3"
+
+msgid "Insights Team"
+msgstr "Команда Insights"
+
+msgid "Insights Team Member"
+msgstr "Учасник команди Insights"
+
+msgid "Insights User"
+msgstr "Користувач Insights"
+
+msgid "Insights User Invitation"
+msgstr "Запрошення користувача Insights"
+
+msgid "Insights Workbook"
+msgstr "Робочий зошит Insights"
+
+msgid "Integer"
+msgstr "Ціле число"
+
+msgid "Integrations"
+msgstr "Інтеграції"
+
+msgid "Invited By"
+msgstr "Запрошено"
+
+msgid "Is Assisted Query"
+msgstr "Запит з підказками"
+
+msgid "Is Builder Query"
+msgstr "Запит конструктора"
+
+msgid "Is DuckLake"
+msgstr "DuckLake"
+
+msgid "Is Expanded"
+msgstr "Розгорнуто"
+
+msgid "Is Expression"
+msgstr "Вираз"
+
+msgid "Is Frappe Database"
+msgstr "База даних Frappe"
+
+msgid "Is Native Query"
+msgstr "Нативний запит"
+
+msgid "Is Public"
+msgstr "Публічний"
+
+msgid "Is Query Based"
+msgstr "На основі запиту"
+
+msgid "Is Saved as Table"
+msgstr "Збережено як таблицю"
+
+msgid "Is Script Query"
+msgstr "Скриптовий запит"
+
+msgid "Is Site Database"
+msgstr "База даних сайту"
+
+msgid "Items"
+msgstr "Елементи"
+
+msgid "Join"
+msgstr "З'єднання"
+
+msgid "Join Telegram Group"
+msgstr "Приєднатися до групи Telegram"
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "Key"
+msgstr "Ключ"
+
+msgid "Label"
+msgstr "Мітка"
+
+msgid "Last Executed On"
+msgstr "Останнє виконання"
+
+msgid "Last Execution"
+msgstr "Останнє виконання"
+
+msgid "Last Log"
+msgstr "Останній журнал"
+
+msgid "Last Run"
+msgstr "Останній запуск"
+
+msgid "Last Status"
+msgstr "Останній статус"
+
+msgid "Last Synced On"
+msgstr "Остання синхронізація"
+
+msgid "Left Column"
+msgstr "Лівий стовпець"
+
+msgid "Left Table"
+msgstr "Ліва таблиця"
+
+msgid "Legacy"
+msgstr "Застарілий"
+
+msgid "Limit"
+msgstr "Ліміт"
+
+msgid "Linked Charts"
+msgstr "Пов'язані діаграми"
+
+msgid "Linked Queries"
+msgstr "Пов'язані запити"
+
+msgid "Links"
+msgstr "Зв'язки"
+
+msgid "Log"
+msgstr "Журнал"
+
+msgid "Log out"
+msgstr "Вийти"
+
+msgid "Login to Frappe Cloud"
+msgstr "Вхід до Frappe Cloud"
+
+msgid "Login to Frappe Cloud?"
+msgstr "Увійти до Frappe Cloud?"
+
+msgid "Long Int"
+msgstr "Довге ціле"
+
+msgid "Long Text"
+msgstr "Довгий текст"
+
+msgid "MariaDB"
+msgstr "MariaDB"
+
+msgid "Mark as Failed"
+msgstr "Позначити як невдале"
+
+msgid "Max Execution Time (Seconds)"
+msgstr "Макс. час виконання (секунди)"
+
+msgid "Max Memory Usage"
+msgstr "Макс. використання пам'яті"
+
+msgid "Max Records To Sync"
+msgstr "Макс. записів для синхронізації"
+
+msgid "Memory Limit (MB)"
+msgstr "Ліміт пам'яті (МБ)"
+
+msgid "Message"
+msgstr "Повідомлення"
+
+msgid "Modified"
+msgstr "Змінено"
+
+msgid "Monday"
+msgstr "Понеділок"
+
+msgid "Monthly"
+msgstr "Щомісяця"
+
+msgid "N:1"
+msgstr "N:1"
+
+msgid "N:N"
+msgstr "N:N"
+
+msgid "Name"
+msgstr "Назва"
+
+msgid "New Workbook"
+msgstr "Новий робочий зошит"
+
+msgid "Next Execution"
+msgstr "Наступне виконання"
+
+msgid "No Workbooks"
+msgstr "Немає робочих зошитів"
+
+msgid "No workbooks to display."
+msgstr "Немає робочих зошитів для відображення."
+
+msgid "None"
+msgstr "Немає"
+
+msgid "Notebook"
+msgstr "Блокнот"
+
+msgid "Old Name"
+msgstr "Стара назва"
+
+msgid "Onboarding Complete"
+msgstr "Налаштування завершено"
+
+msgid "Operations"
+msgstr "Операції"
+
+msgid "Options"
+msgstr "Параметри"
+
+msgid "Order By"
+msgstr "Сортувати за"
+
+msgid "Overwrite"
+msgstr "Перезаписати"
+
+msgid "Owner"
+msgstr "Власник"
+
+msgid "Parquet File"
+msgstr "Файл Parquet"
+
+msgid "Partial Success"
+msgstr "Частковий успіх"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Pending"
+msgstr "Очікування"
+
+msgid "Pending Execution"
+msgstr "Очікує виконання"
+
+msgid "Persistent state storage for the script"
+msgstr "Постійне сховище стану для скрипту"
+
+msgid "Pivot"
+msgstr "Зведена таблиця"
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "Position & Size"
+msgstr "Позиція та розмір"
+
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+msgid "Preview Image"
+msgstr "Зображення попереднього перегляду"
+
+msgid "Primary Key"
+msgstr "Первинний ключ"
+
+msgid "Public Key"
+msgstr "Публічний ключ"
+
+msgid "query"
+msgstr "запит"
+
+msgid "Query"
+msgstr "Запит"
+
+msgid "Query Result Limit"
+msgstr "Ліміт результатів запиту"
+
+msgid "Queued"
+msgstr "В черзі"
+
+msgid "Recipients"
+msgstr "Отримувачі"
+
+msgid "Resource"
+msgstr "Ресурс"
+
+msgid "Resource Type"
+msgstr "Тип ресурсу"
+
+msgid "REST API"
+msgstr "REST API"
+
+msgid "Result"
+msgstr "Результат"
+
+msgid "Result Row Count"
+msgstr "Кількість рядків результату"
+
+msgid "Results"
+msgstr "Результати"
+
+msgid "Results Row Count"
+msgstr "Кількість рядків результатів"
+
+msgid "Right Column"
+msgstr "Правий стовпець"
+
+msgid "Right Table"
+msgstr "Права таблиця"
+
+msgid "Row Limit"
+msgstr "Ліміт рядків"
+
+msgid "Row Size (KB)"
+msgstr "Розмір рядка (КБ)"
+
+msgid "Rows"
+msgstr "Рядки"
+
+msgid "Rows Imported"
+msgstr "Імпортовано рядків"
+
+msgid "Run"
+msgstr "Запустити"
+
+msgid "Run {0} of {1}"
+msgstr "Запуск {0} з {1}"
+
+msgid "Saturday"
+msgstr "Субота"
+
+msgid "Schedule (Cron)"
+msgstr "Розклад (Cron)"
+
+msgid "Schema"
+msgstr "Схема"
+
+msgid "Script"
+msgstr "Скрипт"
+
+msgid "Script Log"
+msgstr "Журнал скрипту"
+
+msgid "Search by Title"
+msgstr "Пошук за назвою"
+
+msgid "Secrets"
+msgstr "Секрети"
+
+msgid "Send Alert"
+msgstr "Надіслати сповіщення"
+
+msgid "Sending Alert..."
+msgstr "Надсилання сповіщення..."
+
+msgid "Set Insights v2 as default"
+msgstr "Встановити Insights v2 за замовчуванням"
+
+msgid "Setting up demo data"
+msgstr "Налаштування демо-даних"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Setup Complete"
+msgstr "Налаштування завершено"
+
+msgid "Share Link"
+msgstr "Поділитися посиланням"
+
+msgid "Site Database"
+msgstr "База даних сайту"
+
+msgid "Sort Order"
+msgstr "Порядок сортування"
+
+msgid "sort_order"
+msgstr "порядок_сортування"
+
+msgid "Source"
+msgstr "Джерело"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "SQLite"
+msgstr "SQLite"
+
+msgid "Started"
+msgstr "Розпочато"
+
+msgid "Started At"
+msgstr "Розпочато о"
+
+msgid "Starting..."
+msgstr "Запуск..."
+
+msgid "State (JSON)"
+msgstr "Стан (JSON)"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Stored"
+msgstr "Збережено"
+
+msgid "String"
+msgstr "Рядок"
+
+msgid "Success"
+msgstr "Успіх"
+
+msgid "Sunday"
+msgstr "Неділя"
+
+msgid "Switch to Insights v2"
+msgstr "Перейти до Insights v2"
+
+msgid "System Manager"
+msgstr "Системний менеджер"
+
+msgid "Table"
+msgstr "Таблиця"
+
+msgid "Table Label"
+msgstr "Мітка таблиці"
+
+msgid "Table Name"
+msgstr "Назва таблиці"
+
+msgid "Table Restrictions"
+msgstr "Обмеження таблиці"
+
+msgid "Tables"
+msgstr "Таблиці"
+
+msgid "Team Members"
+msgstr "Учасники команди"
+
+msgid "Team Name"
+msgstr "Назва команди"
+
+msgid "Team Permissions"
+msgstr "Дозволи команди"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Telegram API Token"
+msgstr "Токен API Telegram"
+
+msgid "Telegram Chat ID"
+msgstr "ID чату Telegram"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Thursday"
+msgstr "Четвер"
+
+msgid "Time"
+msgstr "Час"
+
+msgid "Time Taken (Seconds)"
+msgstr "Витрачено часу (секунди)"
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "Transform"
+msgstr "Перетворення"
+
+msgid "Transforms"
+msgstr "Перетворення"
+
+msgid "Transpose"
+msgstr "Транспонувати"
+
+msgid "Tuesday"
+msgstr "Вівторок"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Unpivot"
+msgstr "Розгорнути зведену таблицю"
+
+msgid "Use Live Connection"
+msgstr "Використовувати живе підключення"
+
+msgid "Use SSL"
+msgstr "Використовувати SSL"
+
+msgid "User"
+msgstr "Користувач"
+
+msgid "Username"
+msgstr "Ім'я користувача"
+
+msgid "Value"
+msgstr "Значення"
+
+msgid "Variable Name"
+msgstr "Назва змінної"
+
+msgid "Variable Value"
+msgstr "Значення змінної"
+
+msgid "Variables"
+msgstr "Змінні"
+
+msgid "Vertical Compact Layout"
+msgstr "Вертикальне компактне розташування"
+
+msgid "Views"
+msgstr "Перегляди"
+
+msgid "Wednesday"
+msgstr "Середа"
+
+msgid "Week Starts On"
+msgstr "Тиждень починається з"
+
+msgid "Weekly"
+msgstr "Щотижня"
+
+msgid "Workbook"
+msgstr "Робочий зошит"
+
+msgid "Workbooks"
+msgstr "Робочі зошити"
+
+msgid "Wrapping up"
+msgstr "Завершення"
+
+msgid "Write Python code to fetch and transform data. Available globals:<br>• client: API client for the selected data source<br>• table: Write data to warehouse. Methods: insert(data, overwrite=False)<br>• state: Persist data between runs. Methods: get(key, default=None), set(key, value), delete(key), clear()<br>• secrets: Access secret keys. Methods: get(key)<br>• log(message): Log execution messages"
+msgstr "Напишіть Python-код для отримання та перетворення даних. Доступні глобальні об'єкти:<br>• client: API-клієнт для обраного джерела даних<br>• table: Запис даних до сховища. Методи: insert(data, overwrite=False)<br>• state: Збереження даних між запусками. Методи: get(key, default=None), set(key, value), delete(key), clear()<br>• secrets: Доступ до секретних ключів. Методи: get(key)<br>• log(message): Запис повідомлень виконання"
+
+msgid "You do not have permission to access this resource"
+msgstr "У вас немає дозволу на доступ до цього ресурсу"
+
+msgid "You do not have permission to modify this workbook"
+msgstr "У вас немає дозволу на зміну цього робочого зошита"
+
+msgid "You do not have permission to share this workbook"
+msgstr "У вас немає дозволу на поширення цього робочого зошита"

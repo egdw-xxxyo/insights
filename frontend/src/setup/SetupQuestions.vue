@@ -1,41 +1,42 @@
 <script setup>
+import { __ } from '@/translation'
 import { inject, reactive, ref } from 'vue'
 import { call } from 'frappe-ui'
 
 const emit = defineEmits(['next', 'prev'])
 const questions = reactive([
 	{
-		question: 'What type of data/database system(s) are you planning to connect with Insights?',
+		question: __('What type of data/database system(s) are you planning to connect with Insights?'),
 		answerOptions: [
-			'I plan to connect to ERPNext',
-			'I plan to use a SQL database (e.g., MySQL, PostgreSQL).',
-			'I plan to use spreadsheets (e.g., Excel, Google Sheets).',
-			'I plan to use a mix of different databases.',
-			"I'm not sure yet.",
+			__('I plan to connect to ERPNext'),
+			__('I plan to use a SQL database (e.g., MySQL, PostgreSQL).'),
+			__('I plan to use spreadsheets (e.g., Excel, Google Sheets).'),
+			__('I plan to use a mix of different databases.'),
+			__("I'm not sure yet."),
 		],
 		multipleAnswers: true,
 		selectedAnswerIndexes: [],
 	},
 	{
-		question: 'What is your level of familiarity with SQL and data analytics?',
+		question: __('What is your level of familiarity with SQL and data analytics?'),
 		answerOptions: [
-			"I'm a complete beginner with no experience in SQL or data analytics.",
-			"I have some familiarity with data analytics, but I'm new to SQL.",
-			"I've used SQL before but am not an expert.",
-			"I'm quite comfortable with SQL and have done some data analysis.",
-			"I'm an expert in SQL and have significant experience in data analytics.",
+			__("I'm a complete beginner with no experience in SQL or data analytics."),
+			__("I have some familiarity with data analytics, but I'm new to SQL."),
+			__("I've used SQL before but am not an expert."),
+			__("I'm quite comfortable with SQL and have done some data analysis."),
+			__("I'm an expert in SQL and have significant experience in data analytics."),
 		],
 		multipleAnswers: false,
 		selectedAnswerIndexes: [],
 	},
 	{
-		question: 'Which of the following best describes your role or use-case for Insights?',
+		question: __('Which of the following best describes your role or use-case for Insights?'),
 		answerOptions: [
-			"I'm a business owner/manager looking to monitor and understand key metrics.",
-			"I'm a data analyst/scientist performing in-depth data exploration.",
-			"I'm part of a team that needs to share data and reports with stakeholders.",
-			"I'm in a tech role, exploring tools for our organization's data visualization needs.",
-			"I'm just exploring and learning about data visualization and business intelligence tools.",
+			__("I'm a business owner/manager looking to monitor and understand key metrics."),
+			__("I'm a data analyst/scientist performing in-depth data exploration."),
+			__("I'm part of a team that needs to share data and reports with stakeholders."),
+			__("I'm in a tech role, exploring tools for our organization's data visualization needs."),
+			__("I'm just exploring and learning about data visualization and business intelligence tools."),
 		],
 		multipleAnswers: false,
 		selectedAnswerIndexes: [],
@@ -61,8 +62,8 @@ const sendingResponses = ref(false)
 async function validateAndContinue() {
 	if (questions.some((question) => question.selectedAnswerIndexes.length === 0)) {
 		$notify({
-			title: 'Please answer all questions',
-			message: 'You must select at least one answer for each question.',
+			title: __('Please answer all questions'),
+			message: __('You must select at least one answer for each question.'),
 			variant: 'error',
 		})
 	} else {
@@ -124,7 +125,7 @@ function skipAndContinue() {
 		</div>
 
 		<div class="mt-6 flex justify-end space-x-3">
-			<Button variant="outline" @click="skipAndContinue"> Skip </Button>
+			<Button variant="outline" @click="skipAndContinue"> {{ __('Skip') }} </Button>
 			<Button
 				variant="solid"
 				@click="validateAndContinue"
@@ -134,7 +135,7 @@ function skipAndContinue() {
 					questions.some((question) => question.selectedAnswerIndexes.length === 0)
 				"
 			>
-				Continue
+				{{ __('Continue') }}
 			</Button>
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 <script setup>
 import useDataSourceStore from '@/stores/dataSourceStore'
+import { __ } from '@/translation'
 import { computed, reactive, ref } from 'vue'
 import Form from '../pages/Form.vue'
 
@@ -9,9 +10,9 @@ const emit = defineEmits(['submit'])
 const database = reactive({})
 const form = ref(null)
 const fields = computed(() => [
-	{ name: 'title', label: 'Title', type: 'text', placeholder: 'My Database', required: true },
+	{ name: 'title', label: __('Title'), type: 'text', placeholder: __('My Database'), required: true },
 	{
-		label: 'Host',
+		label: __('Host'),
 		name: 'host',
 		type: 'text',
 		placeholder: 'localhost',
@@ -19,7 +20,7 @@ const fields = computed(() => [
 		defaultValue: 'localhost',
 	},
 	{
-		label: 'Port',
+		label: __('Port'),
 		name: 'port',
 		type: 'number',
 		placeholder: '5432',
@@ -27,27 +28,27 @@ const fields = computed(() => [
 		defaultValue: 5432,
 	},
 	{
-		label: 'Database Name',
+		label: __('Database Name'),
 		name: 'name',
 		type: 'text',
 		placeholder: 'DB_1267891',
 		required: !database.connection_string,
 	},
 	{
-		label: 'Username',
+		label: __('Username'),
 		name: 'username',
 		type: 'text',
 		placeholder: 'read_only_user',
 		required: !database.connection_string,
 	},
 	{
-		label: 'Password',
+		label: __('Password'),
 		name: 'password',
 		type: 'password',
 		placeholder: '**********',
 		required: !database.connection_string,
 	},
-	{ label: 'Use secure connection (SSL)?', name: 'useSSL', type: 'checkbox' },
+	{ label: __('Use secure connection (SSL)?'), name: 'useSSL', type: 'checkbox' },
 ])
 
 const sources = useDataSourceStore()
@@ -64,9 +65,9 @@ const testConnectionDisabled = computed(() => {
 const connected = ref(null)
 const connectLabel = computed(() => {
 	if (sources.testing) return ''
-	if (connected.value === null) return 'Connect'
-	if (connected.value) return 'Connected'
-	return 'Failed, Retry?'
+	if (connected.value === null) return __('Connect')
+	if (connected.value) return __('Connected')
+	return __('Failed, Retry?')
 })
 const connectIcon = computed(() => {
 	if (connected.value === null) return
@@ -79,7 +80,7 @@ const submitDisabled = computed(() => {
 })
 const submitLabel = computed(() => {
 	if (sources.creating) return ''
-	return props.submitLabel || 'Add Database'
+	return props.submitLabel || __('Add Database')
 })
 
 const testing = ref(false)
@@ -119,7 +120,7 @@ const createNewDatabase = async () => {
 
 	<Input
 		v-model="database.connection_string"
-		label="Connection String"
+		:label="__('Connection String')"
 		placeholder="postgres://user:password@host:port/database"
 	/>
 
@@ -129,7 +130,7 @@ const createNewDatabase = async () => {
 				variant="outline"
 				:disabled="testConnectionDisabled"
 				@click="testConnection"
-				loadingText="Connecting..."
+				:loadingText="__('Connecting...')"
 				:loading="testing"
 				:iconLeft="connectIcon"
 			>
@@ -138,7 +139,7 @@ const createNewDatabase = async () => {
 			<Button
 				variant="solid"
 				:disabled="submitDisabled"
-				loadingText="Adding Database..."
+				:loadingText="__('Adding Database...')"
 				:loading="creating"
 				@click="createNewDatabase"
 			>

@@ -1,5 +1,6 @@
 <script setup>
 import settingsStore from '@/stores/settingsStore'
+import { __ } from '@/translation'
 import { computed, markRaw, provide, reactive, ref } from 'vue'
 import SetupQuestions from './SetupQuestions.vue'
 import SourceConnectionStep from './SourceConnectionStep.vue'
@@ -12,25 +13,25 @@ const setupState = reactive({
 provide('setupState', setupState)
 
 const titleBySourceType = {
-	erpnext: 'Setup ERPNext',
-	mariadb: 'Setup MariaDB',
-	postgresql: 'Setup PostgreSQL',
-	file: 'Setup Spreadsheet',
-	sample: 'Select Sample Dataset',
+	erpnext: __('Setup ERPNext'),
+	mariadb: __('Setup MariaDB'),
+	postgresql: __('Setup PostgreSQL'),
+	file: __('Setup Spreadsheet'),
+	sample: __('Select Sample Dataset'),
 }
 const descriptionBySourceType = {
 	erpnext:
-		'Insights is already connected to your ERPNext site. You can optionally give a title to your site to help you identify it as a data source.',
+		__('Insights is already connected to your ERPNext site. You can optionally give a title to your site to help you identify it as a data source.'),
 	mariadb:
-		'You need to enter your MariaDB database details to connect to your database. If you are not sure about your database details, please contact your database administrator.',
+		__('You need to enter your MariaDB database details to connect to your database. If you are not sure about your database details, please contact your database administrator.'),
 	postgresql:
-		'You need to enter your PostgreSQL database details to connect to your database. If you are not sure about your database details, please contact your database administrator.',
-	file: 'You need to upload a spreadsheet to connect to your data. Insights supports only .csv files.',
-	sample: 'You can choose from one of the sample datasets to connect to Insights.',
+		__('You need to enter your PostgreSQL database details to connect to your database. If you are not sure about your database details, please contact your database administrator.'),
+	file: __('You need to upload a spreadsheet to connect to your data. Insights supports only .csv files.'),
+	sample: __('You can choose from one of the sample datasets to connect to Insights.'),
 }
 
 const connectStepTitle = computed(() => {
-	return titleBySourceType[setupState.sourceType] || 'Connect to Data'
+	return titleBySourceType[setupState.sourceType] || __('Connect to Data')
 })
 const connectStepDescription = computed(() => {
 	return descriptionBySourceType[setupState.sourceType]
@@ -38,10 +39,8 @@ const connectStepDescription = computed(() => {
 
 const steps = ref([
 	{
-		title: 'Welcome to Insights',
-		description: `
-			To get started, you need to connect some data. You can connect to ERPNext, a SQL database, a spreadsheet, or you can explore our sample datasets to get a feel for how Insights works.
-		`,
+		title: __('Welcome to Insights'),
+		description: __('To get started, you need to connect some data. You can connect to ERPNext, a SQL database, a spreadsheet, or you can explore our sample datasets to get a feel for how Insights works.'),
 		component: markRaw(SourceTypeStep),
 	},
 	{
@@ -50,10 +49,8 @@ const steps = ref([
 		component: markRaw(SourceConnectionStep),
 	},
 	{
-		title: 'Help Us Improve',
-		description: `
-			Insights is under active development so	we’d like to ask you a few questions that will help us improve your experience in the future.
-		`,
+		title: __(‘Help Us Improve’),
+		description: __("Insights is under active development so we’d like to ask you a few questions that will help us improve your experience in the future."),
 		component: markRaw(SetupQuestions),
 	},
 ])
@@ -120,7 +117,7 @@ function handlePrev() {
 				</transition>
 				<div class="absolute bottom-0 left-0">
 					<Button variant="outline" @click="handlePrev" v-if="currentStep > 0">
-						Back
+						{{ __('Back') }}
 					</Button>
 				</div>
 			</div>

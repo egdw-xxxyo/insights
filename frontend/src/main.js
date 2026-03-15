@@ -10,6 +10,7 @@ import { initSocket } from './socket'
 import { createToast } from './utils/toasts'
 
 import { registerControllers, registerGlobalComponents } from './globals'
+import { translationPlugin } from './translation'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -35,6 +36,7 @@ app.component('grid-layout', GridLayout)
 app.component('grid-item', GridItem)
 app.provide('$socket', initSocket())
 
+app.use(translationPlugin)
 registerGlobalComponents(app)
 registerControllers(app)
 

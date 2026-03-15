@@ -1,15 +1,16 @@
-import { createResource } from "frappe-ui";
+import { frappeRequest } from "frappe-ui";
 import type { App } from "vue";
+import { reactive } from "vue";
 
-function getTranslatedMessage(message: string): string {
-    const translatedMessages = (("translatedMessages" in window ? window["translatedMessages"] : null) ?? {}) as Record<string, string>;
-    return translatedMessages[message] || message;
-}
+const state = reactive({
+    messages: {} as Record<string, string>,
+    loaded: false,
+});
 
 function translate(message: string): string;
 function translate(message: string, ...args: string[]): string;
 function translate(message: string, ...args: string[]): string {
-    const translatedMessage = getTranslatedMessage(message)
+    const translatedMessage = state.messages[message] || message;
     if (args.length === 0) {
         return translatedMessage;
     }
@@ -20,25 +21,25 @@ function translate(message: string, ...args: string[]): string {
 
 export const __ = translate;
 
-function fetchTranslations() {
-    createResource({
-        url: "insights.api.translations.get_translations",
-        method: "GET",
-        cache: "translations",
-        auto: true,
-        transform(data: Record<string, string>) {
-            (window as any).translatedMessages = data;
+export async function loadTranslations() {
+    try {
+        const data = await frappeRequest({
+            url: "/api/method/insights.api.translations.get_translations",
+            method: "GET",
+        });
+        if (data && typeof data === "object") {
+            Object.assign(state.messages, data);
+            (window as any).translatedMessages = state.messages;
+            state.loaded = true;
         }
-    });
+    } catch (e) {
+        console.warn("Failed to load translations", e);
+    }
 }
 
 export function translationPlugin(app: App<Element>) {
     app.config.globalProperties.__ = translate;
-    const windowObj = window as any;
-    windowObj.__ = translate;
-    if (!windowObj.translatedMessages) {
-        fetchTranslations();
-    }
+    (window as any).__ = translate;
 }
 
 declare module '@vue/runtime-core' {

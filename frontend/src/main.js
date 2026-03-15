@@ -10,7 +10,7 @@ import { initSocket } from './socket'
 import { createToast } from './utils/toasts'
 
 import { registerControllers, registerGlobalComponents } from './globals'
-import { translationPlugin } from './translation'
+import { translationPlugin, loadTranslations } from './translation'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -40,4 +40,7 @@ app.use(translationPlugin)
 registerGlobalComponents(app)
 registerControllers(app)
 
-app.mount('#app')
+// Load translations before mounting so __() has data on first render
+loadTranslations().then(() => {
+	app.mount('#app')
+})

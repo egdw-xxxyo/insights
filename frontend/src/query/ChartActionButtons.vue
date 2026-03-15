@@ -59,7 +59,7 @@ async function createNewDashboard() {
 			<template #icon> <Maximize class="h-4 w-4" /> </template>
 		</Button>
 		<Button variant="outline" @click="onAddToDashboard()"> {{ __('Add to Dashboard') }} </Button>
-		<Button variant="outline" @click="showShareDialog = true"> {{ __('Share') }} </Button>
+		<Button variant="outline" @click="showShareDialog = true"> Поділитися посиланням </Button>
 	</div>
 
 	<PublicShareDialog
@@ -107,7 +107,7 @@ async function createNewDashboard() {
 	</Dialog>
 	<Dialog
 		:options="{
-			title: __('Create New Dashboard'),
+			title: 'Створити новий дашборд',
 			actions: [
 				{
 					label: __('Create'),

@@ -1,5 +1,5 @@
 <template>
-	<Dialog :options="{ title: __('Add User') }" v-model="show">
+	<Dialog :options="{ title: 'Додати користувача' }" v-model="show">
 		<template #body-content>
 			<Form
 				v-model="newUser"

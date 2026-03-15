@@ -12,7 +12,7 @@ const show = computed({
 const content = ref('')
 const isCritical = ref(false)
 
-const dialogOptions = { title: __('Contact the Team'), size: '2xl' }
+const dialogOptions = { title: "Зв'язатися з командою", size: '2xl' }
 const selectedTabIndex = ref(0)
 const tabs = [
 	{
@@ -53,8 +53,8 @@ async function submit() {
 	sending.value = false
 	close()
 	$notify({
-		title: __('Message Sent'),
-		message: __('Your message has been sent to the team.'),
+		title: 'Повідомлення надіслано',
+		message: 'Ваше повідомлення надіслано команді.',
 		variant: 'success',
 	})
 }
@@ -104,7 +104,7 @@ async function submit() {
 					<Button
 						variant="solid"
 						:loading="sending"
-						:label="selectedTabIndex === 2 ? __('Report Bug') : __('Send')"
+						:label="selectedTabIndex === 2 ? __('Report Bug') : 'Надіслати'"
 						@click="submit"
 					/>
 				</div>

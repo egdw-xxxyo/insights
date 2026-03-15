@@ -40,15 +40,15 @@ async function createNotebookPage() {
 	})
 }
 
-const pageMeta = ref({ title: __('Notebooks') })
+const pageMeta = ref({ title: 'Блокноти' })
 updateDocumentTitle(pageMeta)
 </script>
 
 <template>
 	<header class="sticky top-0 z-10 flex items-center justify-between bg-white px-5 py-2.5">
-		<PageBreadcrumbs class="h-7" :items="[{ label: __('Notebooks') }]" />
+		<PageBreadcrumbs class="h-7" :items="[{ label: 'Блокноти' }]" />
 		<div class="space-x-2.5">
-			<Button :label="__('New Notebook')" variant="solid" @click="new_notebook_dialog = true">
+			<Button :label="'Новий блокнот'" variant="solid" @click="new_notebook_dialog = true">
 				<template #prefix>
 					<PlusIcon class="w-4" />
 				</template>
@@ -58,7 +58,7 @@ updateDocumentTitle(pageMeta)
 
 	<div class="mb-4 flex h-full flex-col gap-2 overflow-auto px-4">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl :placeholder="__('Search by Title')" v-model="searchQuery" :debounce="300">
+			<FormControl :placeholder="'Пошук за назвою'" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -66,8 +66,8 @@ updateDocumentTitle(pageMeta)
 		</div>
 		<ListView
 			:columns="[
-				{ label: __('Title'), key: 'title' },
-				{ label: __('Created'), key: 'created_from_now' },
+				{ label: 'Назва', key: 'title' },
+				{ label: 'Створено', key: 'created_from_now' },
 				{ label: __('Modified'), key: 'modified_from_now' },
 			]"
 			:rows="notebooks.list"
@@ -79,10 +79,10 @@ updateDocumentTitle(pageMeta)
 					params: { notebook: notebook.name },
 				}),
 				emptyState: {
-					title: __('No notebooks.'),
+					title: 'Немає блокнотів.',
 					description: __('No notebooks to display.'),
 					button: {
-						label: __('New Notebook'),
+						label: 'Новий блокнот',
 						variant: 'solid',
 						onClick: () => (new_notebook_dialog = true),
 					},
@@ -92,20 +92,20 @@ updateDocumentTitle(pageMeta)
 		</ListView>
 	</div>
 
-	<Dialog :options="{ title: __('New Notebook') }" v-model="new_notebook_dialog">
+	<Dialog :options="{ title: 'Новий блокнот' }" v-model="new_notebook_dialog">
 		<template #body-content>
 			<div class="space-y-4">
 				<Input
 					type="text"
-					:label="__('Title')"
-					:placeholder="__('Enter a suitable title...')"
+					:label="'Назва'"
+					:placeholder="'Введіть назву...'"
 					v-model="new_notebook_title"
 				/>
 			</div>
 		</template>
 		<template #actions>
 			<Button variant="solid" @click="createNotebook" :loading="notebooks.creating">
-				{{ __('Create') }}
+				Створити
 			</Button>
 		</template>
 	</Dialog>

@@ -22,7 +22,7 @@
 				},
 				settings.enable_permissions && query.isOwner
 					? {
-							label: __('Share'),
+							label: 'Поділитися',
 							icon: 'share-2',
 							onClick: () => (show_share_dialog = true),
 					  }
@@ -52,7 +52,7 @@
 					onClick: () => (show_switch_dialog = true),
 				},
 				{
-					label: __('Delete'),
+					label: 'Видалити',
 					icon: 'trash-2',
 					onClick: () => (show_delete_dialog = true),
 				},
@@ -63,12 +63,12 @@
 			v-model="show_delete_dialog"
 			:dismissable="true"
 			:options="{
-				title: __('Delete Query'),
-				message: __('Are you sure you want to delete this query?'),
+				title: 'Видалити запит',
+				message: 'Ви впевнені, що хочете видалити цей запит?',
 				icon: { name: 'trash', appearance: 'danger' },
 				actions: [
 					{
-						label: __('Delete'),
+						label: 'Видалити',
 						variant: 'solid',
 						theme: 'red',
 						onClick: () => {
@@ -108,7 +108,7 @@
 		/>
 
 		<Dialog
-			:options="{ title: __('Generated SQL'), size: '3xl' }"
+			:options="{ title: 'Згенерований SQL', size: '3xl' }"
 			v-model="show_sql_dialog"
 			:dismissable="true"
 		>

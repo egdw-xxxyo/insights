@@ -62,7 +62,7 @@ const dataSourceOptions = computed(() => {
 function changeDataSource(sourceName) {
 	state.query.changeDataSource(sourceName).then(() => {
 		$notify({
-			title: __('Data source updated'),
+			title: 'Джерело даних оновлено',
 			variant: 'success',
 		})
 		state.query.doc.data_source = sourceName
@@ -97,7 +97,7 @@ function changeDataSource(sourceName) {
 						onClick: () => (state.minimizeResult = !state.minimizeResult),
 					},
 					{
-						label: __('Duplicate'),
+						label: 'Дублювати',
 						icon: 'copy',
 						onClick: duplicateQuery,
 						loading: state.query.duplicating,

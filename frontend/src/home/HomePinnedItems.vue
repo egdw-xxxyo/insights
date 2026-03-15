@@ -9,7 +9,7 @@ const showNewPinDialog = ref(false)
 			<div class="rounded bg-gray-100 p-1">
 				<FeatherIcon name="bookmark" class="h-4 w-4" />
 			</div>
-			<div class="text-lg">{{ __('Pinned Charts') }}</div>
+			<div class="text-lg">Закріплені діаграми</div>
 		</div>
 		<div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
 			<div
@@ -19,7 +19,7 @@ const showNewPinDialog = ref(false)
 				<div class="rounded p-1">
 					<FeatherIcon name="plus" class="h-4 w-4 text-gray-600" />
 				</div>
-				<div class="text-lg text-gray-600">{{ __('Select a chart') }}</div>
+				<div class="text-lg text-gray-600">Оберіть діаграму</div>
 			</div>
 		</div>
 	</div>

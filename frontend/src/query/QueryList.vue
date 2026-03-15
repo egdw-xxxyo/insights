@@ -32,7 +32,7 @@ if (route.hash == '#new') {
 	new_dialog.value = true
 }
 
-const pageMeta = ref({ title: __('Queries') })
+const pageMeta = ref({ title: 'Запити' })
 updateDocumentTitle(pageMeta)
 
 const notebooks = useNotebooks()
@@ -62,28 +62,28 @@ async function openQueryEditor(type) {
 
 const queryBuilderTypes = ref([
 	{
-		label: __('Visual'),
-		description: __('Create a query using the visual interface'),
+		label: 'Візуальний',
+		description: 'Створити запит за допомогою візуального інтерфейсу',
 		icon: 'bar-chart-2',
 		onClick: () => openQueryEditor('visual'),
 	},
 
 	{
-		label: __('SQL'),
-		description: __('Create a query by writing native query'),
+		label: 'SQL',
+		description: 'Створити запит написанням SQL',
 		icon: 'code',
 		onClick: () => openQueryEditor('sql'),
 	},
 	{
-		label: __('Notebook'),
-		description: __('Create a query using the notebook interface'),
+		label: 'Блокнот',
+		description: 'Створити запит за допомогою блокнота',
 		icon: 'book',
 		tag: 'beta',
 		onClick: () => openQueryEditor('notebook'),
 	},
 	{
-		label: __('Script'),
-		description: __('Create a query by writing a python script'),
+		label: 'Скрипт',
+		description: 'Створити запит написанням Python скрипту',
 		icon: 'code',
 		tag: 'beta',
 		onClick: () => openQueryEditor('script'),
@@ -125,7 +125,7 @@ function getQueryTypeIcon(query) {
 
 const queryListColumns = [
 	{
-		label: __('Title'),
+		label: 'Назва',
 		key: 'title',
 		width: 2,
 		prefix: ({ row }) => {
@@ -157,7 +157,7 @@ const queryListColumns = [
 		},
 	},
 	{
-		label: __('Data Source'),
+		label: 'Джерело даних',
 		key: 'data_source',
 		width: 1,
 		getLabel: ({ row }) => row.data_source_title || row.data_source,
@@ -176,7 +176,7 @@ const queryListColumns = [
 		},
 	},
 	{
-		label: __('Created'),
+		label: 'Створено',
 		key: 'created_from_now',
 		width: 1,
 		align: 'right',
@@ -186,7 +186,7 @@ const queryListColumns = [
 
 <template>
 	<header class="sticky top-0 z-10 flex items-center justify-between bg-white px-5 py-2.5">
-		<PageBreadcrumbs class="h-7" :items="[{ label: __('Queries') }]" />
+		<PageBreadcrumbs class="h-7" :items="[{ label: 'Запити' }]" />
 		<div>
 			<Button :label="__('New Query')" variant="solid" @click="new_dialog = true">
 				<template #prefix>
@@ -199,7 +199,7 @@ const queryListColumns = [
 	<div class="mb-4 flex h-full flex-col gap-2 overflow-auto px-4">
 		<div class="flex gap-2 overflow-visible py-1">
 			<FormControl
-				:placeholder="__('Search by Title')"
+				:placeholder="'Пошук за назвою'"
 				:modelValue="filters.title?.[1]"
 				@update:modelValue="filters.title = ['like', $event]"
 				:debounce="300"

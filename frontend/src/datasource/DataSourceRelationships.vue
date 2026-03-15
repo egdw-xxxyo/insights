@@ -26,7 +26,7 @@ dataSource.fetchTables()
 					label: dataSource.doc?.title || dataSource.doc?.name,
 					route: { path: `/data-source/${dataSource.doc?.name}` },
 				},
-				{ label: __('Relationships') },
+				{ label: "Зв'язки" },
 			]"
 		/>
 	</header>

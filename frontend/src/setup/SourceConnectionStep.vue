@@ -15,7 +15,7 @@ const erpnextSiteTitle = ref(sitename)
 async function updateERPNextSourceTitle() {
 	if (erpnextSiteTitle.value === '') {
 		$notify({
-			title: __('Please enter a title'),
+			title: 'Будь ласка, введіть назву',
 			message: __('Please enter a title to continue'),
 			type: 'error',
 		})

@@ -1,6 +1,6 @@
 <template>
 	<header class="sticky top-0 z-10 flex items-center justify-between bg-white px-5 py-2.5">
-		<PageBreadcrumbs class="h-7" :items="[{ label: __('Settings') }]" />
+		<PageBreadcrumbs class="h-7" :items="[{ label: 'Налаштування' }]" />
 		<div class="space-x-2.5">
 			<Button
 				:label="__('Update')"
@@ -26,7 +26,7 @@
 						:description="__('Maximum number of rows to be returned by a query. This is to prevent long running queries and memory issues.')"
 					>
 						<Input type="number" min="0" v-model="configurables.query_result_limit" />
-						<div class="ml-2 text-gray-600">{{ __("Rows") }}</div>
+						<div class="ml-2 text-gray-600">Рядки</div>
 					</Setting>
 
 					<Setting
@@ -55,7 +55,7 @@
 						<Input
 							type="checkbox"
 							v-model="configurables.auto_execute_query"
-							:label="configurables.auto_execute_query ? __('Enabled') : __('Disabled')"
+							:label="configurables.auto_execute_query ? 'Увімкнено' : 'Вимкнено'"
 						/>
 					</Setting>
 
@@ -66,7 +66,7 @@
 						<Input
 							type="checkbox"
 							v-model="configurables.allow_subquery"
-							:label="configurables.allow_subquery ? __('Enabled') : __('Disabled')"
+							:label="configurables.allow_subquery ? 'Увімкнено' : 'Вимкнено'"
 						/>
 					</Setting>
 				</div>
@@ -133,5 +133,5 @@ const updateDisabled = computed(() => {
 	)
 })
 
-document.title = __('Settings') + ' - Insights'
+document.title = 'Налаштування' + ' - Insights'
 </script>

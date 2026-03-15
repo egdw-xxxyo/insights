@@ -44,7 +44,7 @@ async function selectQuery() {
 
 <template>
 	<div class="space-y-2">
-		<span class="mb-2 block text-sm leading-4 text-gray-700">{{ __('Query') }}</span>
+		<span class="mb-2 block text-sm leading-4 text-gray-700">Запит</span>
 		<div class="relative">
 			<Autocomplete
 				:placeholder="__('Select a query')"
@@ -78,7 +78,7 @@ async function selectQuery() {
 						@click="deleteQuery"
 						:loading="queryStore.deleting"
 					>
-						{{ __('Discard') }}
+						Відхилити
 					</Button>
 					<Button variant="solid" @click="selectQuery"> {{ __('Done') }} </Button>
 				</div>

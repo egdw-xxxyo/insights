@@ -19,7 +19,7 @@
 		/>
 		<div v-if="dataSourceTable.doc" class="ml-2 flex items-center space-x-2.5">
 			<Badge variant="subtle" :theme="hidden ? 'gray' : 'green'" size="md">
-				{{ hidden ? __('Disabled') : __('Enabled') }}
+				{{ hidden ? 'Вимкнути' : 'Увімкнути' }}
 			</Badge>
 			<Dropdown
 				placement="left"
@@ -29,17 +29,17 @@
 				}"
 				:options="[
 					{
-						label: hidden ? __('Enable') : __('Disable'),
+						label: hidden ? 'Увімкнути' : 'Вимкнути',
 						icon: hidden ? 'eye' : 'eye-off',
 						onClick: () => (hidden = !hidden),
 					},
 					{
-						label: __('Sync Table'),
+						label: 'Синхронізувати таблицю',
 						icon: 'refresh-cw',
 						onClick: () => dataSourceTable.sync(),
 					},
 					{
-						label: __('Add Link'),
+						label: "Додати зв'язок",
 						icon: 'link',
 						onClick: () => (addLinkDialog = true),
 					},
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<Dialog :options="{ title: __('Create a Link') }" v-model="addLinkDialog">
+	<Dialog :options="{ title: \"Створити зв'язок\" }" v-model="addLinkDialog">
 		<template #body-content>
 			<div class="space-y-4">
 				<div>
@@ -237,7 +237,7 @@ const createLinkResource = createResource({
 		$notify({
 			variant: 'success',
 			title: __('Success'),
-			message: __('Link created successfully'),
+			message: "Зв'язок створено",
 		})
 	},
 })

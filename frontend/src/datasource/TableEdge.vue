@@ -23,19 +23,19 @@ const dropdownOptions = [
 		group: __('Cardinality'),
 		items: [
 			{
-				label: __('One to One'),
+				label: 'Один до одного',
 				onClick: () => state.setCardinality(props.id, '1:1'),
 			},
 			{
-				label: __('One to Many'),
+				label: 'Один до багатьох',
 				onClick: () => state.setCardinality(props.id, '1:N'),
 			},
 			{
-				label: __('Many to One'),
+				label: 'Багато до одного',
 				onClick: () => state.setCardinality(props.id, 'N:1'),
 			},
 			{
-				label: __('Many to Many'),
+				label: 'Багато до багатьох',
 				onClick: () => state.setCardinality(props.id, 'N:N'),
 			},
 		],

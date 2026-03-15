@@ -235,7 +235,7 @@ function isValueSelected(value) {
 					v-if="selecting === 'column'"
 					class="mt-2 flex w-fit flex-col rounded bg-white p-2 text-base shadow"
 				>
-					<div class="mb-1 px-1 text-sm text-gray-500">{{ __('Select a column') }}</div>
+					<div class="mb-1 px-1 text-sm text-gray-500">Оберіть стовпець</div>
 					<div
 						class="cursor-pointer rounded px-2 py-1.5 hover:bg-gray-100"
 						v-for="column in columns"
@@ -250,7 +250,7 @@ function isValueSelected(value) {
 					v-if="selecting === 'operator'"
 					class="mt-2 flex w-fit flex-col rounded bg-white p-2 text-base shadow"
 				>
-					<div class="mb-1 px-1 text-sm text-gray-500">{{ __('Select an operator') }}</div>
+					<div class="mb-1 px-1 text-sm text-gray-500">Оберіть оператор</div>
 					<div
 						class="cursor-pointer rounded px-2 py-1.5 hover:bg-gray-100"
 						v-for="operator in operators"
@@ -281,7 +281,7 @@ function isValueSelected(value) {
 							class="form-input mb-2 block h-7 w-full border-gray-400 placeholder-gray-500"
 						/>
 						<ComboboxOptions static class="flex max-h-[20rem] flex-col overflow-hidden">
-							<div class="mb-1 px-1 text-sm text-gray-500">{{ __('Select an option') }}</div>
+							<div class="mb-1 px-1 text-sm text-gray-500">Оберіть варіант</div>
 							<div class="flex-1 overflow-y-auto">
 								<ComboboxOption
 									v-for="value in values"

@@ -90,7 +90,7 @@ updateDocumentTitle(pageMeta)
 					params: { notebook: notebook.doc.name, name: page.name },
 				}),
 				emptyState: {
-					title: __('No pages.'),
+					title: 'Немає сторінок.',
 					description: __('No pages to display.'),
 					button: {
 						label: __('New Page'),
@@ -105,7 +105,7 @@ updateDocumentTitle(pageMeta)
 
 	<Dialog
 		:options="{
-			title: __('Delete Notebook'),
+			title: 'Видалити блокнот',
 			icon: { name: 'trash', variant: 'solid', theme: 'red' },
 		}"
 		v-model="showDeleteDialog"

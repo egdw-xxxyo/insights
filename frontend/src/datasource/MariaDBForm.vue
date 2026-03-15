@@ -12,7 +12,7 @@ const form = ref(null)
 const fields = [
 	{ name: 'title', label: __('Title'), type: 'text', placeholder: __('My Database'), required: true },
 	{
-		label: __('Host'),
+		label: 'Хост',
 		name: 'host',
 		type: 'text',
 		placeholder: 'localhost',
@@ -20,7 +20,7 @@ const fields = [
 		defaultValue: 'localhost',
 	},
 	{
-		label: __('Port'),
+		label: 'Порт',
 		name: 'port',
 		type: 'number',
 		placeholder: '3306',
@@ -28,27 +28,27 @@ const fields = [
 		defaultValue: 3306,
 	},
 	{
-		label: __('Database Name'),
+		label: 'Назва бази даних',
 		name: 'name',
 		type: 'text',
 		placeholder: 'DB_1267891',
 		required: true,
 	},
 	{
-		label: __('Username'),
+		label: "Ім'я користувача",
 		name: 'username',
 		type: 'text',
 		placeholder: 'read_only_user',
 		required: true,
 	},
 	{
-		label: __('Password'),
+		label: 'Пароль',
 		name: 'password',
 		type: 'password',
 		placeholder: '**********',
 		required: true,
 	},
-	{ label: __('Use secure connection (SSL)?'), name: 'useSSL', type: 'checkbox' },
+	{ label: 'Використовувати SSL?', name: 'useSSL', type: 'checkbox' },
 ]
 
 const sources = useDataSourceStore()

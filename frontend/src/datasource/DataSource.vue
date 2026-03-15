@@ -3,7 +3,7 @@
 		<PageBreadcrumbs
 			class="h-7"
 			:items="[
-				{ label: __('Data Sources'), route: { path: '/data-source' } },
+				{ label: 'Джерела даних', route: { path: '/data-source' } },
 				{ label: dataSource.doc.title },
 			]"
 		/>
@@ -11,7 +11,7 @@
 
 	<div class="mb-4 flex h-full flex-col gap-2 overflow-auto px-4">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl :placeholder="__('Search by Title')" v-model="searchQuery" :debounce="300">
+			<FormControl :placeholder="'Пошук за назвою'" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -40,10 +40,10 @@
 					params: { name: dataSource.doc.name, table: table.name },
 				}),
 				emptyState: {
-					title: __('No tables.'),
+					title: 'Немає таблиць.',
 					description: __('No tables to display.'),
 					button: {
-						label: __('Sync Tables'),
+						label: 'Синхронізувати таблиці',
 						variant: 'solid',
 						onClick: syncTables,
 					},
@@ -57,12 +57,12 @@
 		v-model="showDeleteDialog"
 		:dismissable="true"
 		:options="{
-			title: __('Delete Data Source'),
-			message: __('Are you sure you want to delete this data source?'),
+			title: 'Видалити джерело даних',
+			message: 'Ви впевнені, що хочете видалити це джерело даних?',
 			icon: { name: 'trash', appearance: 'danger' },
 			actions: [
 				{
-					label: __('Delete'),
+					label: 'Видалити',
 					variant: 'solid',
 					theme: 'red',
 					onClick: async () => {
@@ -112,12 +112,12 @@ const showDeleteDialog = ref(false)
 const dropdownActions = computed(() => {
 	return [
 		{
-			label: __('Sync Tables'),
+			label: 'Синхронізувати таблиці',
 			icon: 'refresh-cw',
 			onClick: syncTables,
 		},
 		{
-			label: __('Delete'),
+			label: 'Видалити',
 			icon: 'trash',
 			onClick: () => (showDeleteDialog.value = true),
 		},
@@ -139,11 +139,11 @@ watchEffect(() => {
 })
 
 const tableListColumns = [
-	{ label: __('Table'), key: 'label' },
+	{ label: 'Таблиця', key: 'label' },
 	{
-		label: __('Status'),
+		label: 'Статус',
 		key: 'status',
-		getLabel: ({ row }) => (row.hidden ? __('Disabled') : __('Enabled')),
+		getLabel: ({ row }) => (row.hidden ? 'Вимкнено' : 'Увімкнено'),
 		prefix: ({ row }) => {
 			const color = row.hidden ? 'text-gray-500' : 'text-green-500'
 			return <IndicatorIcon class={color} />

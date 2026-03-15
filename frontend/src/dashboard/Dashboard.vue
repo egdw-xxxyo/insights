@@ -53,7 +53,7 @@ function calcInitialXY({ x, y }) {
 const pageMeta = computed(() => {
 	return {
 		title: dashboard.doc.title || props.name,
-		subtitle: __('Dashboard'),
+		subtitle: 'Дашборд',
 	}
 })
 updateDocumentTitle(pageMeta)
@@ -117,7 +117,7 @@ const debouncedUpdateTitle = debounce((value) => dashboard.updateTitle(value), 5
 		<template #sidebar v-if="dashboard.editing && dashboard.sidebar.open">
 			<div class="w-[21rem] overflow-y-auto border-l bg-white p-3 px-4 shadow-sm">
 				<div v-if="!dashboard.currentItem">
-					<div class="mb-3 font-semibold text-gray-800">{{ __('Widgets') }}</div>
+					<div class="mb-3 font-semibold text-gray-800">Віджети</div>
 					<DashboardSidebarWidgets @dragChange="draggingWidget = $event" />
 				</div>
 
@@ -129,12 +129,12 @@ const debouncedUpdateTitle = debounce((value) => dashboard.updateTitle(value), 5
 							icon="arrow-left"
 							@click="dashboard.currentItem = undefined"
 						></Button>
-						<div class="ml-2 text-gray-800">{{ __('Back') }}</div>
+						<div class="ml-2 text-gray-800">Назад</div>
 					</div>
 
 					<Input
 						type="select"
-						:label="__('Widget Type')"
+						:label="'Тип віджету'"
 						class="w-full"
 						:options="widgets.list.map((widget) => widget.type)"
 						v-model="dashboard.currentItem.item_type"
@@ -164,7 +164,7 @@ const debouncedUpdateTitle = debounce((value) => dashboard.updateTitle(value), 5
 							variant="outline"
 							@click="dashboard.resetOptions(dashboard.currentItem)"
 						>
-							{{ __("Reset Options") }}
+							Скинути параметри
 						</Button>
 						<Button
 							iconLeft="trash"

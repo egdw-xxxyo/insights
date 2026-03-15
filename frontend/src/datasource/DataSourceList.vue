@@ -1,8 +1,8 @@
 <template>
 	<header class="sticky top-0 z-10 flex items-center justify-between bg-white px-5 py-2.5">
-		<PageBreadcrumbs class="h-7" :items="[{ label: __('Data Sources') }]" />
+		<PageBreadcrumbs class="h-7" :items="[{ label: 'Джерела даних' }]" />
 		<div>
-			<Button :label="__('New Data Source')" variant="solid" @click="new_dialog = true">
+			<Button :label="'Нове джерело даних'" variant="solid" @click="new_dialog = true">
 				<template #prefix>
 					<PlusIcon class="w-4" />
 				</template>
@@ -12,7 +12,7 @@
 
 	<div class="mb-4 flex h-full flex-col gap-2 overflow-auto px-4">
 		<div class="flex gap-2 overflow-visible py-1">
-			<FormControl :placeholder="__('Search by Title')" v-model="searchQuery" :debounce="300">
+			<FormControl :placeholder="'Пошук за назвою'" v-model="searchQuery" :debounce="300">
 				<template #prefix>
 					<SearchIcon class="h-4 w-4 text-gray-500" />
 				</template>
@@ -29,10 +29,10 @@
 					params: { name: dataSource.name },
 				}),
 				emptyState: {
-					title: __('No Data Sources.'),
+					title: 'Немає джерел даних.',
 					description: __('No data sources to display.'),
 					button: {
-						label: __('New Data Source'),
+						label: 'Нове джерело даних',
 						variant: 'solid',
 						onClick: () => (new_dialog = true),
 					},
@@ -121,19 +121,19 @@ const databaseTypes = ref([
 ])
 
 const dataSourceListColumns = [
-	{ label: __('Title'), key: 'title' },
+	{ label: 'Назва', key: 'title' },
 	{
-		label: __('Status'),
+		label: 'Статус',
 		key: 'status',
 		prefix: ({ row }) => {
 			const color = row.status == 'Inactive' ? 'text-gray-500' : 'text-green-500'
 			return <IndicatorIcon class={color} />
 		},
 	},
-	{ label: __('Database Type'), key: 'database_type' },
-	{ label: __('Created'), key: 'created_from_now' },
+	{ label: 'Тип бази даних', key: 'database_type' },
+	{ label: 'Створено', key: 'created_from_now' },
 ]
 
-const pageMeta = ref({ title: __('Data Sources') })
+const pageMeta = ref({ title: 'Джерела даних' })
 updateDocumentTitle(pageMeta)
 </script>

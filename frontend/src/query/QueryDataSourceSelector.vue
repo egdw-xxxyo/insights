@@ -22,7 +22,7 @@ const dataSourceOptions = computed(() => {
 function changeDataSource(sourceName) {
 	query.changeDataSource(sourceName).then(() => {
 		$notify({
-			title: __('Data source updated'),
+			title: 'Джерело даних оновлено',
 			variant: 'success',
 		})
 	})

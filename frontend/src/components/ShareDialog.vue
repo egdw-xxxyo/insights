@@ -130,7 +130,7 @@ const show = computed({
 })
 
 const title = computed(() => {
-	return __('Share') + ' ' + props.resourceType.replace('Insights ', '')
+	return 'Поділитися посиланням' + ' ' + props.resourceType.replace('Insights ', '')
 })
 
 const isPublic = computed({

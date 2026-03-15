@@ -26,7 +26,7 @@ const sidebarItems = ref([
 		icon: 'file-text',
 	},
 	{
-		label: __('Delete Team'),
+		label: 'Видалити команду',
 		icon: 'trash-2',
 		variant: 'solid',
 		theme: 'red',
@@ -55,7 +55,7 @@ function handleSidebarItemClick(item) {
 
 function showDeletePrompt() {
 	showPrompt({
-		title: __('Delete Team'),
+		title: 'Видалити команду',
 		message: __('Are you sure you want to delete this team?'),
 		icon: { name: 'trash', variant: 'solid', theme: 'red' },
 		primaryAction: {

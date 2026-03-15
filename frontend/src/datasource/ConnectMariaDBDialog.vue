@@ -10,7 +10,7 @@ const show = computed({
 })
 </script>
 <template>
-	<Dialog v-model="show" :options="{ title: __('Connect to MariaDB') }">
+	<Dialog v-model="show" :options="{ title: 'Підключення до MariaDB' }">
 		<template #body-content>
 			<MariaDBForm @submit="show = false" />
 		</template>

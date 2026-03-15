@@ -93,8 +93,8 @@ function switchToV3() {
 			</div>
 
 			<div class="mt-5 flex justify-end gap-2">
-				<Button variant="subtle" @click="showDetailsDialog = false">{{ __('Close') }}</Button>
-				<Button variant="solid" @click="switchToV3">{{ __('Open Insights v3') }}</Button>
+				<Button variant="subtle" @click="showDetailsDialog = false">Закрити</Button>
+				<Button variant="solid" @click="switchToV3">Відкрити Insights v3</Button>
 			</div>
 		</template>
 	</Dialog>

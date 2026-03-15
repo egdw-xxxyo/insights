@@ -1,8 +1,8 @@
 <template>
 	<header class="sticky top-0 z-10 flex items-center justify-between bg-white px-5 py-2.5">
-		<PageBreadcrumbs class="h-7" :items="[{ label: __('Dashboards') }]" />
+		<PageBreadcrumbs class="h-7" :items="[{ label: 'Дашборди' }]" />
 		<div class="space-x-2.5">
-			<Button :label="__('New Dashboard')" variant="solid" @click="showDialog = true">
+			<Button :label="'Новий дашборд'" variant="solid" @click="showDialog = true">
 				<template #prefix>
 					<Plus class="h-4 w-4" />
 				</template>
@@ -17,18 +17,18 @@
 			<DashboardsGroup
 				v-if="favorites.length > 0"
 				:dashboards="favorites"
-				:title="__('Favorites')"
+				:title="'Обрані'"
 			/>
 			<DashboardsGroup
 				v-if="settings.enable_permissions"
 				:dashboards="privates"
-				:title="__('Private')"
+				:title="'Приватні'"
 			/>
-			<DashboardsGroup :dashboards="sortedDashboards" :title="__('All')" :enableSearch="true" />
+			<DashboardsGroup :dashboards="sortedDashboards" :title="'Всі'" :enableSearch="true" />
 		</div>
 		<div v-else class="flex flex-1 flex-col items-center justify-center space-y-1">
 			<div class="text-base font-light text-gray-600">
-				{{ __("You haven't created any dashboards yet.") }}
+				Ви ще не створили жодного дашборду.
 			</div>
 			<div
 				class="cursor-pointer text-sm font-light text-blue-500 hover:underline"
@@ -39,12 +39,12 @@
 		</div>
 	</div>
 
-	<Dialog :options="{ title: __('New Dashboard') }" v-model="showDialog">
+	<Dialog :options="{ title: 'Новий дашборд' }" v-model="showDialog">
 		<template #body-content>
 			<Input
 				type="text"
-				:label="__('Title')"
-				:placeholder="__('Enter a suitable title...')"
+				:label="'Назва'"
+				:placeholder="'Введіть назву...'"
 				v-model="newDashboardTitle"
 			/>
 		</template>
@@ -55,7 +55,7 @@
 				@click="createDashboard"
 				:loading="dashboards.creating"
 			>
-				{{ __('Create') }}
+				Створити
 			</Button>
 		</template>
 	</Dialog>
@@ -103,6 +103,6 @@ async function createDashboard() {
 	router.push(`/dashboard/${name}`)
 }
 
-const pageMeta = ref({ title: __('Dashboards') })
+const pageMeta = ref({ title: 'Дашборди' })
 updateDocumentTitle(pageMeta)
 </script>

@@ -34,7 +34,7 @@ function deletePage() {
 
 	<Dialog
 		:options="{
-			title: __('Delete Page'),
+			title: 'Видалити сторінку',
 			icon: { name: 'trash', variant: 'solid', theme: 'red' },
 			actions: [
 				{

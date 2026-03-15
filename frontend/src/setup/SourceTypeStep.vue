@@ -37,7 +37,7 @@ const setupState = inject('setupState')
 function validateAndContinue() {
 	if (selectedOption.value === null) {
 		$notify({
-			title: __('Please select an option'),
+			title: 'Будь ласка, оберіть варіант',
 			message: __('Please select an option to continue'),
 			type: 'error',
 		})

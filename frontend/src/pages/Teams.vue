@@ -2,14 +2,14 @@
 	<BasePage>
 		<template #header>
 			<div class="flex flex-1 justify-between">
-				<h1 class="text-3xl font-medium text-gray-900">{{ __('Teams') }}</h1>
+				<h1 class="text-3xl font-medium text-gray-900">Команди</h1>
 				<div class="space-x-4">
 					<Button
 						variant="outline"
 						class="shadow"
 						iconLeft="plus"
 						@click="showAddTeamDialog = true"
-						>{{ __('Add Team') }}</Button
+						>Додати команду</Button
 					>
 				</div>
 			</div>

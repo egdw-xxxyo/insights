@@ -39,7 +39,7 @@ const connectStepDescription = computed(() => {
 
 const steps = ref([
 	{
-		title: __('Welcome to Insights'),
+		title: 'Ласкаво просимо до Insights',
 		description: __('To get started, you need to connect some data. You can connect to ERPNext, a SQL database, a spreadsheet, or you can explore our sample datasets to get a feel for how Insights works.'),
 		component: markRaw(SourceTypeStep),
 	},

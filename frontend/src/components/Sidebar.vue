@@ -79,7 +79,7 @@
 					placement="left"
 					:options="[
 						{
-							label: __('Documentation'),
+							label: 'Документація',
 							icon: 'help-circle',
 							onClick: () => open('https://docs.frappeinsights.com'),
 						},
@@ -89,24 +89,24 @@
 							onClick: () => open('https://t.me/frappeinsights'),
 						},
 						{
-							label: __('Help'),
+							label: 'Довідка',
 							icon: 'life-buoy',
 							onClick: () => (showHelpDialog = true),
 						},
 						session.user.is_admin
 							? {
-									label: __('Switch to Desk'),
+									label: 'Перейти до Desk',
 									icon: 'grid',
 									onClick: () => open('/app'),
 							  }
 							: null,
 						{
-							label: __('Open Insights v3'),
+							label: 'Відкрити Insights v3',
 							icon: 'grid',
 							onClick: () => (showSwitchToV3Dialog = true),
 						},
 						{
-							label: __('Logout'),
+							label: 'Вийти',
 							icon: 'log-out',
 							onClick: () => session.logout(),
 						},
@@ -141,7 +141,7 @@
 			title: __('Insights v2 is being discontinued'),
 			actions: [
 				{
-					label: __('Open Insights v3'),
+					label: 'Відкрити Insights v3',
 					variant: 'solid',
 					onClick: openInsightsV3,
 				},
@@ -199,41 +199,41 @@ const showSwitchToV3Dialog = ref(false)
 const sidebarItems = ref([
 	{
 		path: '/',
-		label: __('Home'),
+		label: 'Головна',
 		icon: HomeIcon,
 		name: 'Home',
 		current: false,
 	},
 	{
 		path: '/dashboard',
-		label: __('Dashboards'),
+		label: 'Дашборди',
 		icon: LayoutPanelTop,
 		name: 'Dashboard',
 		current: false,
 	},
 	{
 		path: '/query',
-		label: __('Query'),
+		label: 'Запит',
 		icon: GanttChartSquare,
 		name: 'QueryList',
 		current: false,
 	},
 	{
 		path: '/data-source',
-		label: __('Data Sources'),
+		label: 'Джерела даних',
 		icon: Database,
 		name: 'Data Source',
 	},
 	{
 		path: '/notebook',
-		label: __('Notebook'),
+		label: 'Блокнот',
 		icon: Book,
 		name: 'Notebook',
 		current: false,
 	},
 	{
 		path: '/settings',
-		label: __('Settings'),
+		label: 'Налаштування',
 		icon: Settings,
 		name: 'Settings',
 		current: false,

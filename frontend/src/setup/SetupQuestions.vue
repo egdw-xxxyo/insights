@@ -125,7 +125,7 @@ function skipAndContinue() {
 		</div>
 
 		<div class="mt-6 flex justify-end space-x-3">
-			<Button variant="outline" @click="skipAndContinue"> {{ __('Skip') }} </Button>
+			<Button variant="outline" @click="skipAndContinue"> Пропустити </Button>
 			<Button
 				variant="solid"
 				@click="validateAndContinue"

@@ -1,5 +1,5 @@
 <template>
-	<Dialog :options="{ title: __('Add Team') }" v-model="show">
+	<Dialog :options="{ title: 'Додати команду' }" v-model="show">
 		<template #body-content>
 			<Form
 				v-model="newTeam"

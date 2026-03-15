@@ -138,10 +138,10 @@
 	<Dialog
 		v-model="showSwitchToV3Dialog"
 		:options="{
-			title: __("Insights v2 is being discontinued"),
+			title: __('Insights v2 is being discontinued'),
 			actions: [
 				{
-					label: __("Open Insights v3"),
+					label: __('Open Insights v3'),
 					variant: 'solid',
 					onClick: openInsightsV3,
 				},

@@ -39,7 +39,7 @@
 						onClick: () => dataSourceTable.sync(),
 					},
 					{
-						label: "Додати звʼязок",
+						label: 'Додати звʼязок',
 						icon: 'link',
 						onClick: () => (addLinkDialog = true),
 					},
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<Dialog :options="{ title: \"Створити звʼязок\" }" v-model="addLinkDialog">
+	<Dialog :options="{ title: 'Створити звʼязок' }" v-model="addLinkDialog">
 		<template #body-content>
 			<div class="space-y-4">
 				<div>
